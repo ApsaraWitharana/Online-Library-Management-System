@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="735.0" prefWidth="820.0" style="-fx-background-color: #cacdcf;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
+   <children>
+      <Label layoutX="58.0" layoutY="54.0" prefHeight="67.0" prefWidth="228.0" text="Hellow ,User">
+         <font>
+            <Font name="Javanese Text" size="24.0" />
+         </font>
+      </Label>
+      <ImageView layoutX="207.0" layoutY="63.0">
+         <image>
+            <Image url="@../icon/icons8-telegram-50.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="58.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Library  Management.." wrappingWidth="212.60003662109375">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" height="221.0" layoutX="271.0" layoutY="63.0" stroke="#492cdc" strokeType="INSIDE" width="527.0">
+         <fill>
+            <LinearGradient endX="0.901515209313595" endY="0.07575759020718659" startX="0.5340908467769623" startY="0.4015151659647624">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.19103313982486725" green="0.2022092193365097" blue="0.5263158082962036" opacity="0.9300000071525574" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.8951219512195121">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.94390243902439">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8980392217636108" green="0.8941176533699036" blue="0.9372549057006836" opacity="0.949999988079071" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill></Rectangle>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#e6ecf2" height="109.0" layoutX="373.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#e6ecf2" height="109.0" layoutX="592.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Label layoutX="334.0" layoutY="91.0" text="Today's Summary." textFill="#ecdede">
+         <font>
+            <Font name="Georgia Bold" size="18.0" />
+         </font>
+      </Label>
+      <Text layoutX="386.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Books Return" wrappingWidth="122.78411865234375">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="410.0" layoutY="157.0">
+         <image>
+            <Image url="@../icon/open-book.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="492.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="29">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="398.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+10% from yesterday">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="621.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" New Users" wrappingWidth="91.58416748046875">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <ImageView layoutX="635.0" layoutY="164.0">
+         <image>
+            <Image url="@../icon/icons8-add-male-user-64.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="613.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+8% from yesterday">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="701.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <ImageView layoutX="34.0" layoutY="202.0">
+         <image>
+            <Image url="@../icon/icons8-library-64.png" />
+         </image>
+      </ImageView>
+      <BarChart fx:id="barChart" layoutX="49.0" layoutY="447.0" legendVisible="false" prefHeight="282.0" prefWidth="535.0" style="-fx-background-color: white;" styleClass="chart-bar" stylesheets="@../../../../../../../RMMS-D/src/main/resources/css/style.css">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </BarChart>
+      <Label layoutX="90.0" layoutY="295.0" text="Today Borrowing Books Details.">
+         <font>
+            <Font name="Georgia Bold" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" height="403.0" layoutX="14.0" layoutY="326.0" stroke="BLACK" strokeType="INSIDE" width="790.0">
+         <fill>
+            <LinearGradient endX="0.9280303174799138" endY="0.14393937948978308" startX="0.5719696527177638" startY="0.4128788095532042">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.19103313982486725" green="0.2022092193365097" blue="0.5263158082962036" opacity="0.9300000071525574" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.8951219512195121">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.94390243902439">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.23513071238994598" green="0.19380000233650208" blue="0.5099999904632568" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <BarChart fx:id="barChart1" layoutX="105.0" layoutY="351.0" legendVisible="false" prefHeight="343.0" prefWidth="535.0" style="-fx-background-color: white;" styleClass="chart-bar" stylesheets="@../../../../../../../RMMS-D/src/main/resources/css/style.css">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>
