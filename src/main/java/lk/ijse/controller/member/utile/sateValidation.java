@@ -10,6 +10,7 @@ public class sateValidation {
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(user_id);
         return m.matches();
+
     }
 
     public static boolean userNameCheck(String user_name) {
@@ -17,6 +18,7 @@ public class sateValidation {
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(user_name);
         return m.matches();
+
     }
 
     public static boolean AddressCheck(String address) {
@@ -24,12 +26,14 @@ public class sateValidation {
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(address);
         return m.matches();
+
     }
     public static boolean bookIdCheck(String book_id) {
         String pattern = "^B-\\d+$";  //B-001
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(book_id);
         return m.matches();
+
     }
 
     public static boolean libraryIdCheck(String library_id) {
@@ -37,6 +41,7 @@ public class sateValidation {
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(library_id);
         return m.matches();
+
     }
 
 
