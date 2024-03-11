@@ -38,6 +38,12 @@ public class Library {
 
     @OneToMany(mappedBy = "library")
     private List<UserRegistration> userRegistrations  = new ArrayList<>();
+
+
+    @OneToMany(mappedBy = "library")
+    private List<Admin> admins  = new ArrayList<>();
+
+
     public Library(String id) {
         this.id=id;
     }

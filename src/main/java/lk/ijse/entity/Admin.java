@@ -26,8 +26,16 @@ public class Admin {
 
 //    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "admin")
 //    private List<Book> books = new ArrayList<>();
-//
+
+    @ManyToOne
+    @jakarta.persistence.JoinColumn(name = "book_id",referencedColumnName = "book_id")
+    private Book book;
+
 //    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "admin")
 //    private List<Library> libraries = new ArrayList<>();
+
+    @ManyToOne
+    @jakarta.persistence.JoinColumn(name = "library_id",referencedColumnName = "library_id")
+    private Library library;
 
 }

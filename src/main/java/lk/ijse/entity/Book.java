@@ -52,6 +52,8 @@ import java.util.List;
         @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "book")
         private List<IssueBook> issueBook = new ArrayList<>();
 
+        @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "book")
+        private List<Admin> admins = new ArrayList<>();
 
 
         public Book(String id) {
