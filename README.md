@@ -66,6 +66,9 @@ Features
 ![Screenshot 2024-03-11 205221](https://github.com/ApsaraWitharana/Online-Library-Management-System/assets/139870615/3fb25586-0aad-45d7-8fb2-2c3e2ab9d8aa)
 
 
+* ER Diagram To Library Management System
+
+  ![Screenshot 2024-03-11 214915](https://github.com/ApsaraWitharana/Online-Library-Management-System/assets/139870615/37186142-b266-416c-ba70-9d8c30fb09b9)
 
 
   
