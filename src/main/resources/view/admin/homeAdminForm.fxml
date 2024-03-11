@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="txtAnchorPane" prefHeight="800.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.admin.Dashboard2FormController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1000.0" layoutX="-7.0">
+         <image>
+            <Image url="@../../../../../../../library2.jpeg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e3e5b7" height="800.0" stroke="BLACK" strokeType="INSIDE" width="190.0" />
+      <Button layoutX="20.0" layoutY="127.0" mnemonicParsing="false" onAction="#btnRegistationOnAction" prefHeight="34.0" prefWidth="150.0" text="Registation">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="19.0" layoutY="209.0" mnemonicParsing="false" onAction="#btnUserOnAction" prefHeight="34.0" prefWidth="150.0" text="User Manage">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="20.0" layoutY="313.0" mnemonicParsing="false" onAction="#btnLibraryOnAction" prefHeight="34.0" prefWidth="150.0" text="Library Manage">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="20.0" layoutY="412.0" mnemonicParsing="false" onAction="#btnBookManageOnAction" prefHeight="34.0" prefWidth="150.0" text="Book Manage">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="20.0" layoutY="514.0" mnemonicParsing="false" onAction="#btnBrrowanBookOnAction" prefHeight="34.0" prefWidth="150.0" text="Brrowan Book">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="19.0" layoutY="599.0" mnemonicParsing="false" onAction="#btnReturnOnActino" prefHeight="34.0" prefWidth="150.0" text="Return Book">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="20.0" layoutY="692.0" mnemonicParsing="false" onAction="#btnLogOutOnAction" prefHeight="34.0" prefWidth="150.0" text="Log out">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="20.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnDashboardOnAction" prefHeight="34.0" prefWidth="150.0" text="Dashboard">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e3e5b7" height="77.0" layoutX="185.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="808.0" />
+      <Text fill="#0e232b" layoutX="226.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="forgot-pass" text="&quot;BookWorm&quot;">
+         <font>
+            <Font name="Javanese Text" size="28.0" />
+         </font>
+      </Text>
+      <Circle fx:id="circle" centerX="50.0" centerY="50.0" fill="#e0e5ea" layoutX="872.0" layoutY="-17.0" onMouseClicked="#btnImageOnAction" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="890.0" layoutY="50.0" text="Admin Sachi">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView layoutX="953.0" layoutY="24.0">
+         <image>
+            <Image url="@../../icon/icons8-arrow-down-24.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblTime" layoutX="683.0" layoutY="19.0" prefHeight="27.0" prefWidth="182.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="442.0" layoutY="19.0" prefHeight="27.0" prefWidth="172.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

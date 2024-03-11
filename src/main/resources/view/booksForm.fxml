@@ -4,21 +4,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="735.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.BookManageFormController">
+<AnchorPane prefHeight="735.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.member.BookManageFormController">
    <children>
-      <ImageView fitHeight="735.0" fitWidth="820.0" layoutX="-4.0" layoutY="-2.0">
+      <ImageView fitHeight="735.0" fitWidth="850.0" layoutX="-4.0" layoutY="-2.0">
          <image>
             <Image url="@../image/books add.jpeg" />
          </image>
       </ImageView>
-      <Label layoutX="193.0" layoutY="31.0" prefHeight="42.0" prefWidth="252.0" text="Books Management" textFill="#e4dfdf">
+      <Label layoutX="270.0" layoutY="31.0" prefHeight="42.0" prefWidth="252.0" text="Books Management" textFill="#e4dfdf">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -39,7 +39,7 @@
          <font>
             <Font size="13.0" />
          </font></TextField>
-      <TextField fx:id="txtGenre" layoutX="584.0" layoutY="114.0" prefHeight="32.0" prefWidth="214.0" promptText="Genre:" style="-fx-background-color: gray;">
+      <TextField fx:id="txtStream" layoutX="584.0" layoutY="114.0" prefHeight="32.0" prefWidth="214.0" promptText="Stream:" style="-fx-background-color: gray;">
          <font>
             <Font size="13.0" />
          </font></TextField>
@@ -47,29 +47,29 @@
          <font>
             <Font size="13.0" />
          </font></TextField>
-      <Button fx:id="btnSave" layoutX="372.0" layoutY="313.0" mnemonicParsing="false" onAction="#btnSaveOnAction" opacity="0.76" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: red; -fx-background-radius: 30;" text="Save" textFill="WHITE">
+      <Button fx:id="btnSave" layoutX="264.0" layoutY="313.0" mnemonicParsing="false" onAction="#btnSaveOnAction" opacity="0.87" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="smallbtn" stylesheets="@css/sheet.css" text="Save" textFill="#230303">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnUpdate" layoutX="522.0" layoutY="313.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: green; -fx-background-radius: 30;" text="Update" textFill="WHITE">
+      <Button fx:id="btnUpdate" layoutX="406.0" layoutY="313.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" opacity="0.93" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="Update" textFill="#230202">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnDelete" layoutX="674.0" layoutY="313.0" mnemonicParsing="false" onAction="#OnDeleteOnAction" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: blue; -fx-background-radius: 30;" text="Delete" textFill="WHITE">
+      <Button fx:id="btnClear" layoutX="674.0" layoutY="313.0" mnemonicParsing="false" onAction="#btnClearOnAction" opacity="0.93" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="Clear" textFill="#131212">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <TableView fx:id="tblBooks" layoutX="26.0" layoutY="412.0" prefHeight="296.0" prefWidth="774.0" style="-fx-background-color: gray;">
+      <TableView fx:id="tblBooks" layoutX="26.0" layoutY="412.0" onMouseClicked="#tblOnMouseClicked" prefHeight="296.0" prefWidth="774.0" style="-fx-background-color: gray;">
         <columns>
           <TableColumn fx:id="colId" prefWidth="133.60003089904785" text="ID" />
           <TableColumn fx:id="colTitle" prefWidth="127.19998168945312" text="TITLE" />
-            <TableColumn fx:id="colGenre" prefWidth="128.800048828125" text="GENRE" />
-            <TableColumn fx:id="colAuthor" prefWidth="128.80001831054688" text="AUTHOR" />
-            <TableColumn fx:id="colStatus" prefWidth="131.99993896484375" text="STATUS" />
-            <TableColumn fx:id="colQty" prefWidth="125.5999755859375" text="QTY" />
+            <TableColumn fx:id="colStream" prefWidth="128.800048828125" text="STREAM" />
+            <TableColumn fx:id="colAuthor" prefWidth="118.40005493164062" text="AUTHOR" />
+            <TableColumn fx:id="colStatus" prefWidth="141.60003662109375" text="STATUS" />
+            <TableColumn fx:id="colQty" prefWidth="121.5999755859375" text="QTY" />
         </columns>
       </TableView>
       <ImageView fitHeight="86.0" fitWidth="100.0" layoutX="691.0" layoutY="14.0">
@@ -77,15 +77,21 @@
             <Image url="@../icon/reading.png" />
          </image>
       </ImageView>
-      <ImageView layoutX="68.0" layoutY="20.0">
+      <ImageView layoutX="14.0" layoutY="20.0">
          <image>
             <Image url="@../icon/icons8-library-64.png" />
          </image>
       </ImageView>
-      <TextArea layoutX="52.0" layoutY="239.0" opacity="0.66" prefHeight="162.0" prefWidth="159.0" promptText="set book image" style="-fx-background-color: water;">
+      <Rectangle fx:id="rerctan" arcHeight="25.0" arcWidth="25.0" fill="#e3e6ea" height="154.0" layoutX="86.0" layoutY="236.0" onMouseClicked="#setImageOnAction" stroke="BLACK" strokeType="INSIDE" width="141.0" />
+      <Button fx:id="btnAddNew" layoutX="119.0" layoutY="40.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="Add New" textFill="#f7f3f3">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
-      </TextArea>
+      </Button>
+      <Button fx:id="btDelete" layoutX="544.0" layoutY="313.0" mnemonicParsing="false" onAction="#btnDeleteOnActionn" opacity="0.94" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="Delete" textFill="#201f1f">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

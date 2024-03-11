@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.member.ReturnBookFormController">
+   <children>
+      <ImageView fitHeight="665.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../image/abstract-blue-black-colorful-geometric-light-triangle-line-shape-with-futuristic-concept-presentation-background_181182-34640.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c2c4c7" height="572.0" layoutX="68.0" layoutY="72.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" width="465.0" />
+      <Label layoutX="204.0" layoutY="14.0" prefHeight="42.0" prefWidth="227.0" text="Return Book" textFill="#e4dfdf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbUserId" layoutX="129.0" layoutY="136.0" opacity="0.63" prefHeight="32.0" prefWidth="302.0" promptText="User Id" style="-fx-background-color: white;" visibleRowCount="20" />
+      <TextField fx:id="txtUserName" layoutX="129.0" layoutY="202.0" opacity="0.8" prefHeight="32.0" prefWidth="301.0" promptText="User Name:" style="-fx-background-color: white;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="cmbBookId" layoutX="129.0" layoutY="265.0" opacity="0.63" prefHeight="32.0" prefWidth="302.0" promptText="Book Id:" style="-fx-background-color: white;" visibleRowCount="20" />
+      <TextField fx:id="txtBookName" layoutX="130.0" layoutY="327.0" opacity="0.8" prefHeight="32.0" prefWidth="301.0" promptText="Book Name:" style="-fx-background-color: white;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <DatePicker fx:id="dpDate" layoutX="129.0" layoutY="385.0" prefHeight="32.0" prefWidth="302.0" promptText="Return Date:" />
+      <Label layoutX="130.0" layoutY="460.0" prefHeight="27.0" prefWidth="126.0" text="Issue Date:" textFill="#f2eaea">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="281.0" layoutY="460.0" prefHeight="27.0" prefWidth="206.0" textFill="#f2eaea">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnReturn" layoutX="146.0" layoutY="548.0" mnemonicParsing="false" onAction="#btnReturnOnActiion" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Return" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCansel" layoutX="337.0" layoutY="548.0" mnemonicParsing="false" onAction="#btnCanselOnAction" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Cansel" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

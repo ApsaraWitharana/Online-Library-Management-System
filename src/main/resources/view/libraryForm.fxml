@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="725.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.member.LibraryManageFormController">
+   <children>
+      <ImageView fitHeight="736.0" fitWidth="850.0" layoutX="-7.0" layoutY="-1.0">
+         <image>
+            <Image url="@../image/library image2.jpeg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtId" layoutX="56.0" layoutY="172.0" prefHeight="32.0" prefWidth="214.0" promptText="Id:" style="-fx-background-color: gray;">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Label layoutX="280.0" layoutY="41.0" prefHeight="42.0" prefWidth="252.0" text="Library  Management" textFill="#e4dfdf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView layoutX="24.0" layoutY="30.0">
+         <image>
+            <Image url="@../icon/icons8-library-64.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtName" layoutX="317.0" layoutY="172.0" prefHeight="32.0" prefWidth="214.0" promptText="Name:" style="-fx-background-color: gray;">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtAddress" layoutX="580.0" layoutY="172.0" prefHeight="32.0" prefWidth="214.0" promptText="Address:" style="-fx-background-color: gray;">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtEmail" layoutX="56.0" layoutY="276.0" prefHeight="32.0" prefWidth="214.0" promptText="Email:" style="-fx-background-color: gray;">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtContact" layoutX="317.0" layoutY="276.0" prefHeight="32.0" prefWidth="214.0" promptText="Contact:" style="-fx-background-color: gray;">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnSave" layoutX="243.0" layoutY="358.0" mnemonicParsing="false" onAction="#btnSaveOnAction" opacity="0.91" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="btn" text="Save" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button id="LibraryManage" fx:id="btnUpdate" layoutX="378.0" layoutY="358.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" opacity="0.91" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="smallbtn" stylesheets= text="Update" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="514.0" layoutY="358.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" opacity="0.91" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="btn" text="Delete" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnClear" layoutX="651.0" layoutY="358.0" mnemonicParsing="false" onAction="#btnClearOnAction" opacity="0.91" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="btn" text="Clear" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tblLibrary" layoutX="56.0" layoutY="422.0" onMouseClicked="#tblOnMouseAction" prefHeight="270.0" prefWidth="738.0" style="-fx-background-color: Grey;">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="114.39998626708984" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="135.20001220703125" text="NAME" />
+            <TableColumn fx:id="colAddress" prefWidth="146.4000244140625" text="ADDRESS" />
+            <TableColumn fx:id="colEmail" prefWidth="179.19998168945312" text="EMAIL" />
+            <TableColumn fx:id="colContact" prefWidth="164.0" text="CONTACT" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="687.0" layoutY="30.0">
+         <image>
+            <Image url="@../icon/book - Copy.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

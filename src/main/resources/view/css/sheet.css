@@ -1,8 +1,0 @@
-.text-field:hover{
-    -fx-fill: "#cacdcf";
-}
-
-.image-icon:hover{
-    -fx-effect: innershadow(gaussian, #4537e1, 50, 50, 0, 0);
-    -fx-effect: dropshadow(gaussian, #4537e1, 2, 0.3, 0.0, 0.0);
-}

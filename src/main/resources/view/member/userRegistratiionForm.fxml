@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="730.0" prefWidth="850.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.member.UserRegistrationFormController">
+   <children>
+      <ImageView fitHeight="740.0" fitWidth="850.0">
+         <image>
+            <Image url="@../../image/libraries image.jpeg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#8f6c53d6" height="562.0" layoutX="330.0" layoutY="94.0" stroke="BLACK" strokeType="INSIDE" width="458.0" />
+      <ImageView fitHeight="425.0" fitWidth="302.0" layoutX="34.0" layoutY="251.0">
+         <image>
+            <Image url="@../../image/Untitled (10)-fotor-bg-remover-2023082602146.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="407.0" layoutY="29.0" prefHeight="42.0" prefWidth="227.0" text="User  Registation" textFill="#e4dfdf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView layoutX="34.0" layoutY="40.0">
+         <image>
+            <Image url="@../../icon/icons8-library-64.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnSave" layoutX="364.0" layoutY="547.0" mnemonicParsing="false" onAction="#btnSaveOnAction" opacity="0.91" prefHeight="34.0" prefWidth="73.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 5px; -fx-font-family: green; -fx-font-size: 15px; -fx-font-weight: 600;" text="Save" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnClear" layoutX="676.0" layoutY="547.0" mnemonicParsing="false" onAction="#btnClearOnAction" opacity="0.91" prefHeight="34.0" prefWidth="73.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Clear" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtId" layoutX="388.0" layoutY="153.0" onKeyPressed="#txtIdOnMouseKeyTyped" prefHeight="32.0" prefWidth="301.0" promptText="User Registation Id:" style="-fx-background-color: #604020;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtName" layoutX="390.0" layoutY="211.0" onKeyPressed="#txtNameOnMouseKeyTyped" prefHeight="32.0" prefWidth="301.0" promptText="Full Name:" style="-fx-background-color: #604020;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtAddress" layoutX="390.0" layoutY="268.0" onKeyPressed="#txtAddressOnMouseAction" prefHeight="32.0" prefWidth="301.0" promptText="Address:" style="-fx-background-color: #604020;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtEmail" layoutX="390.0" layoutY="325.0" prefHeight="32.0" prefWidth="301.0" promptText="Email:" style="-fx-background-color: #604020;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtContact" layoutX="390.0" layoutY="384.0" prefHeight="32.0" prefWidth="301.0" promptText="Contact:" style="-fx-background-color: #604020;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Text layoutX="407.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="rdMale" layoutX="498.0" layoutY="474.0" mnemonicParsing="false" text="Male">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="rdFemale" layoutX="581.0" layoutY="474.0" mnemonicParsing="false" text="Female">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="rdOther" layoutX="676.0" layoutY="474.0" mnemonicParsing="false" text="Other">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <Button fx:id="btnUpdate" layoutX="466.0" layoutY="547.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" opacity="0.91" prefHeight="34.0" prefWidth="74.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Update" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="570.0" layoutY="547.0" mnemonicParsing="false" onAction="#btnDeleteOnActiono" opacity="0.91" prefHeight="34.0" prefWidth="74.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Delete" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

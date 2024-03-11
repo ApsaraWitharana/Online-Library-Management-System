@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ancerbookD" prefHeight="730.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.member.BookDetailsFormController">
+   <children>
+      <ImageView fitHeight="740.0" fitWidth="850.0" layoutX="-10.0">
+         <image>
+            <Image url="@../../image/library image2.jpeg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#8f6c54e5" height="405.0" layoutX="20.0" layoutY="170.0" stroke="BLACK" strokeType="INSIDE" width="788.0" />
+      <Label layoutX="325.0" layoutY="43.0" prefHeight="42.0" prefWidth="227.0" text="Today Book Details" textFill="#e4dfdf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEnterResId" layoutX="219.0" layoutY="103.0" prefHeight="32.0" prefWidth="374.0" promptText="Search hear..." style="-fx-background-color: white;">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Group fx:id="grpGetStByResId" layoutX="593.0" layoutY="112.0" />
+      <TableView fx:id="tblBooks" layoutX="30.0" layoutY="215.0" onMouseClicked="#tblOnMouseClicked" prefHeight="296.0" prefWidth="759.0" style="-fx-background-color: gray;">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="133.60003089904785" text="ID" />
+            <TableColumn fx:id="colTitle" prefWidth="127.19998168945312" text="TITLE" />
+            <TableColumn fx:id="colStream" prefWidth="128.800048828125" text="STREAM" />
+            <TableColumn fx:id="colAuthor" prefWidth="118.40005493164062" text="AUTHOR" />
+            <TableColumn fx:id="colStatus" prefWidth="141.60003662109375" text="STATUS" />
+            <TableColumn fx:id="colQty" prefWidth="121.5999755859375" text="QTY" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnIssueBook" layoutX="165.0" layoutY="610.0" mnemonicParsing="false" onAction="#btnIsssuOnAction" opacity="0.91" prefHeight="42.0" prefWidth="134.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="Issue Book" textFill="#dcd8d8">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnReturnBook" layoutX="476.0" layoutY="610.0" mnemonicParsing="false" onAction="#btnReturnOnAction" opacity="0.91" prefHeight="42.0" prefWidth="134.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="Return Book" textFill="#dcd8d8">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <ImageView layoutX="24.0" layoutY="30.0">
+         <image>
+            <Image url="@../../icon/icons8-library-64.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#bec8d1" height="64.0" layoutX="610.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" width="72.0" />
+      <ImageView fitHeight="42.0" fitWidth="47.0" layoutX="622.0" layoutY="93.0" onMouseClicked="#btnSearchOnAction">
+         <image>
+            <Image url="@../../icon/icons8-search-30 (1).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

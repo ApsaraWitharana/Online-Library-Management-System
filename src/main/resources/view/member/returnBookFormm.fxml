@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="720.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.member.IssueReturnBookDetailsFormController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="860.0">
+         <image>
+            <Image url="@../../../../../../../library1.jpeg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#8f6c54e5" height="626.0" layoutX="26.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" width="788.0" />
+      <TableView fx:id="tblIssueBook" layoutX="40.0" layoutY="126.0" onMouseClicked="#tblOnMouseClicked" prefHeight="226.0" prefWidth="759.0" style="-fx-background-color: gray;">
+         <columns>
+            <TableColumn fx:id="colBookId" prefWidth="159.20000457763672" text="BOOK ID" />
+            <TableColumn fx:id="colUserId" prefWidth="139.19998168945312" text="USER ID" />
+            <TableColumn fx:id="colIsueDate" prefWidth="166.4000244140625" text="ISSUE DATE" />
+            <TableColumn fx:id="colDays" prefWidth="140.00009155273438" text="DAYS" />
+            <TableColumn fx:id="colAvailable" prefWidth="155.20001220703125" text="AVAILABLE" />
+         </columns>
+      </TableView>
+      <TableView fx:id="tblReturnBook" layoutX="41.0" layoutY="440.0" onMouseClicked="#tblOnMouseClicked" prefHeight="226.0" prefWidth="750.0" style="-fx-background-color: gray;">
+         <columns>
+            <TableColumn fx:id="colBookId" prefWidth="157.5999984741211" text="BOOK ID" />
+            <TableColumn fx:id="colUserId" prefWidth="169.60003662109375" text="USER ID" />
+            <TableColumn fx:id="colIssueDate" prefWidth="149.59994506835938" text="ISSUE DATE" />
+            <TableColumn fx:id="colReturnDate" prefWidth="138.39996337890625" text="RETURN DATE" />
+            <TableColumn fx:id="colAction" prefWidth="133.59995117187498" text="ACTION" />
+         </columns>
+      </TableView>
+      <Label layoutX="327.0" layoutY="25.0" prefHeight="42.0" prefWidth="227.0" text=" Sell Book Details" textFill="#e4dfdf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="77.0" prefHeight="30.0" prefWidth="254.0" text="Issue Book Datails ::" textFill="#efeded">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="381.0" prefHeight="30.0" prefWidth="254.0" text="Return Book Datails ::" textFill="#efeded">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

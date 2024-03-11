@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="735.0" prefWidth="820.0" style="-fx-background-color: #cacdcf;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.member.DashboardFormController">
+   <children>
+      <ImageView fitHeight="736.0" fitWidth="837.0" layoutX="-7.0" layoutY="-1.0">
+         <image>
+            <Image url="@../../image/library image2.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="58.0" layoutY="54.0" prefHeight="67.0" prefWidth="228.0" text="Hellow ,User" textFill="#e1d8d8">
+         <font>
+            <Font name="Javanese Text" size="24.0" />
+         </font>
+      </Label>
+      <ImageView layoutX="207.0" layoutY="63.0">
+         <image>
+            <Image url="@../../icon/icons8-telegram-50.png" />
+         </image>
+      </ImageView>
+      <Text fill="#e7e0e0" layoutX="58.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Library  Management.." wrappingWidth="212.60003662109375">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#734112" height="221.0" layoutX="271.0" layoutY="63.0" stroke="#492cdc" strokeType="INSIDE" width="527.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#e6ecf2" height="109.0" layoutX="373.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#e6ecf2" height="109.0" layoutX="592.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Label layoutX="334.0" layoutY="91.0" text="Today's Summary." textFill="#ecdede">
+         <font>
+            <Font name="Georgia Bold" size="18.0" />
+         </font>
+      </Label>
+      <Text layoutX="386.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Books Return" wrappingWidth="122.78411865234375">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="410.0" layoutY="157.0">
+         <image>
+            <Image url="@../../icon/open-book.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="492.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="29">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="398.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+10% from yesterday">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="621.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" New Users" wrappingWidth="91.58416748046875">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <ImageView layoutX="635.0" layoutY="164.0">
+         <image>
+            <Image url="@../../icon/icons8-add-male-user-64.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="613.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+8% from yesterday">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="701.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <ImageView layoutX="34.0" layoutY="202.0">
+         <image>
+            <Image url="@../../icon/icons8-library-64.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="58.0" layoutY="313.0" text="Today Borrowing Books Details." textFill="#e1dede">
+         <font>
+            <Font name="Georgia Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblBook" layoutX="22.0" layoutY="398.0" prefHeight="286.0" prefWidth="772.0" style="-fx-background-color: gray;">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="116.80001258850098" text="Book id" />
+          <TableColumn fx:id="colTitle" prefWidth="117.5999755859375" text="Title" />
+            <TableColumn fx:id="colAuther" prefWidth="120.79998779296875" text="Auther" />
+            <TableColumn fx:id="colStream" prefWidth="133.60003662109375" text="Stream" />
+            <TableColumn fx:id="colStatus" prefWidth="154.39999389648438" text="Status" />
+            <TableColumn fx:id="colQty" prefWidth="128.79998779296875" text="Qty" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

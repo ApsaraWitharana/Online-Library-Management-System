@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.member.IssueBookFormController">
+   <children>
+      <ImageView fitHeight="665.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../image/abstract-blue-black-colorful-geometric-light-triangle-line-shape-with-futuristic-concept-presentation-background_181182-34640.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="195.0" layoutY="32.0" prefHeight="42.0" prefWidth="227.0" text="Issue Book" textFill="#e4dfdf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c2c4c7" height="572.0" layoutX="67.0" layoutY="74.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" width="465.0" />
+      <ComboBox fx:id="cmbUserId" layoutX="119.0" layoutY="126.0" onAction="#cmbUserIdOnAction" opacity="0.63" prefHeight="32.0" prefWidth="302.0" promptText="User Id" style="-fx-background-color: white;" visibleRowCount="20" />
+      <ComboBox fx:id="cmbBookId" layoutX="119.0" layoutY="203.0" onAction="#cmbBookIdOnAction" opacity="0.63" prefHeight="32.0" prefWidth="302.0" promptText="Book Id:" style="-fx-background-color: white;" visibleRowCount="20" />
+      <DatePicker fx:id="dpDate" layoutX="119.0" layoutY="291.0" prefHeight="32.0" prefWidth="302.0" promptText="Issue Date:" />
+      <TextField fx:id="txtDayCount" layoutX="300.0" layoutY="483.0" opacity="0.8" prefHeight="32.0" prefWidth="109.0" promptText="Days:" style="-fx-background-color: white;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="119.0" layoutY="485.0" text="Day Count:" textFill="#f2efef">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnSave" layoutX="130.0" layoutY="557.0" mnemonicParsing="false" onAction="#btnSaveOnAvtion" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Issue" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCansel" layoutX="315.0" layoutY="557.0" mnemonicParsing="false" onAction="#btnCanselOnAction" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Cansel" textFill="#280404">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="436.0" layoutY="92.0">
+         <image>
+            <Image url="@../../icon/reading-book.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtAvailable" layoutX="119.0" layoutY="383.0" opacity="0.8" prefHeight="32.0" prefWidth="301.0" promptText="Available:" style="-fx-background-color: white;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

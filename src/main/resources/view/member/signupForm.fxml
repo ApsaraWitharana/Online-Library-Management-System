@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="signupPane" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.member.SignupFormController">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="702.0">
+         <image>
+            <Image url="@../../image/abstract-blue-black-colorful-geometric-light-triangle-line-shape-with-futuristic-concept-presentation-background_181182-34640.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="490.0" fitWidth="353.0" layoutX="-6.0" layoutY="10.0">
+         <image>
+            <Image url="@../../image/library login.jpeg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#1e395284" height="439.0" layoutX="29.0" layoutY="46.0" stroke="BLACK" strokeType="INSIDE" width="647.0" />
+      <Label layoutX="86.0" layoutY="226.0" prefHeight="58.0" prefWidth="236.0" text="&quot;BookWorm&quot;" textFill="#e7dfdf">
+         <font>
+            <Font name="Gabriola" size="48.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="95.0" layoutY="16.0">
+         <image>
+            <Image url="@../../image/Simple_Black_and_Turquoise_Welcome_Instagram_Post-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="378.0" layoutY="64.0" text="User SignUp" textFill="#f4eeee">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUserName" layoutX="378.0" layoutY="116.0" prefHeight="26.0" prefWidth="221.0" promptText="UserName" />
+      <TextField fx:id="txEmail" layoutX="378.0" layoutY="169.0" prefHeight="26.0" prefWidth="221.0" promptText="Email" />
+      <TextField fx:id="txtPassword" layoutX="378.0" layoutY="226.0" prefHeight="26.0" prefWidth="221.0" promptText="Password" />
+      <TextField fx:id="txtConfromPassword" layoutX="378.0" layoutY="277.0" prefHeight="26.0" prefWidth="221.0" promptText="Confrom Password" />
+      <Text fill="#e4dcdc" layoutX="395.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an Account ? Sign in" wrappingWidth="187.10162353515625" />
+      <Button fx:id="btnSignUp" layoutX="441.0" layoutY="337.0" mnemonicParsing="false" onAction="#btnSignupOnAction" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: white; -fx-background-radius: 40;" text="SignUp" />
+      <ImageView layoutX="612.0" layoutY="59.0">
+         <image>
+            <Image url="@../../icon/icons8-add-male-user-64.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
