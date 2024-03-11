@@ -15,11 +15,13 @@
 .btn:hover {
     -fx-font-size: 18;
     -fx-font-family: "Eras Bold ITC";
+
 }
 
 .smallbtn{
     -fx-background-color: #ebebeb;
     -fx-background-radius: 10;
+
 }
 
 .smallbtn:hover{
