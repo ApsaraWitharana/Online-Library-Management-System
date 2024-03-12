@@ -10,6 +10,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.BookBO;
 import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.bo.custom.UserBO;
@@ -48,10 +49,10 @@ public class ReturnBookFormController implements Initializable {
     @FXML
     private TextField txtUserName;
 
-    IssueBookBO issueBookBO = new IssueBookBOImpl();
-    UserBO userBO = new UserBOImpl();
+    IssueBookBO issueBookBO = (IssueBookBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.ISSUE_BOOK);
+    UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.USER);
 
-    BookBO bookBO = new BookBOImpl();
+    BookBO bookBO = (BookBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.BOOK);
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

@@ -2,9 +2,13 @@ package lk.ijse.bo.custom.impl;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.BookBO;
+import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.config.SessionFactoryConfig;
+import lk.ijse.dao.DAOFactory;
 import lk.ijse.dao.custom.BookDAO;
+import lk.ijse.dao.custom.IssueBookDAO;
 import lk.ijse.dao.custom.impl.BookDAOImpl;
 import lk.ijse.dto.BookDTO;
 import lk.ijse.entity.Book;
@@ -18,7 +22,7 @@ import java.util.List;
 
 public class BookBOImpl implements BookBO {
     private Session session;
-    BookDAO bookDAO = new BookDAOImpl();
+    BookDAO bookDAO = (BookDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.BOOK);
     @Override
     public BookDTO getTitle() {
         return bookDAO.getTitle();

@@ -15,10 +15,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.bo.BOFactory;
+import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.bo.custom.LoginBO;
 import lk.ijse.bo.custom.impl.LoginBOImpl;
 import lk.ijse.bo.custom.UserBO;
 import lk.ijse.bo.custom.impl.UserBOImpl;
+import lk.ijse.dto.UserDTO;
 import lk.ijse.entity.User;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -51,15 +54,15 @@ public class LoginFormController {
     @FXML
     private PasswordField txtPassword1;
     public static User loginUser;
-
+    public static Long userID;
    public static   String user_name;
    public static   String password;
-    UserBO userBO = new UserBOImpl();
+    UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.USER);
     LoginBO loginBO = new LoginBOImpl();
 
     @FXML
     void logInOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
-      // boolean isCorrectUser = loginBO.isCurrectUser(txtName.getText(),txtPassword1.getText());
+        // boolean isCorrectUser = loginBO.isCurrectUser(txtName.getText(),txtPassword1.getText());
 
 
         user_name = txtName.getText();
@@ -69,7 +72,8 @@ public class LoginFormController {
         stage.setTitle("Chat Room");
         stage.show();
 
-        //System.out.println(isCorrectUser);
+
+            //System.out.println(isCorrectUser);
 
 //        if (isCorrectUser) {
 //            Parent root = FXMLLoader.load(getClass().getResource("/view/homepage_from.fxml"));
@@ -112,6 +116,7 @@ public class LoginFormController {
 //            }
 //        }else
 //            new Alert(Alert.AlertType.ERROR,"Please fill up all fields!").show();
+
 
     }
 

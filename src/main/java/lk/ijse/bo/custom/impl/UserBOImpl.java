@@ -150,6 +150,8 @@ public class UserBOImpl  implements UserBO {
     }
 
 
+
+
 //    public List<IssueUserProjection> getUserProjection() {
 //
 ////        1.constructor object ekk

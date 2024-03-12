@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.BookBO;
 import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.bo.custom.UserBO;
@@ -52,10 +53,10 @@ public class IssueBookFormController implements Initializable {
 
     @FXML
     private TextField txtAvailable;
-    IssueBookBO issueBookBO = new IssueBookBOImpl();
-    UserBO userBO = new UserBOImpl();
+    IssueBookBO issueBookBO = (IssueBookBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.ISSUE_BOOK);
+    UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.USER);
 
-    BookBO bookBO = new BookBOImpl();
+    BookBO bookBO = (BookBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.BOOK);
     IssueBookProjection issueBookProjection = new IssueBookProjection();
     private ObservableList<IssueBookTM> obList = FXCollections.observableArrayList();
 

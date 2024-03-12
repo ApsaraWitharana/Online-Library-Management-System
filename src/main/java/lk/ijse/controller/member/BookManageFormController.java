@@ -16,7 +16,9 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
+import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.BookBO;
+import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.bo.custom.impl.BookBOImpl;
 import lk.ijse.controller.member.utile.sateValidation;
 import lk.ijse.dto.BookDTO;
@@ -85,7 +87,7 @@ public class BookManageFormController implements Initializable {
     private Button btnClear;
     
     public static Image image;
-    BookBO bookBO = new BookBOImpl();
+    BookBO bookBO = (BookBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.BOOK);
     ObservableList<BookTM> obList = FXCollections.observableArrayList();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

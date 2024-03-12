@@ -13,6 +13,8 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
+import lk.ijse.bo.BOFactory;
+import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.bo.custom.SettingBO;
 import lk.ijse.bo.custom.impl.SettingBOImpl;
 import org.mindrot.jbcrypt.BCrypt;
@@ -63,7 +65,7 @@ public class SettingFormController implements Initializable {
     private Label lblUserName;
     public static   String user_name;
 
-    SettingBO settingBO = new SettingBOImpl();
+    SettingBO settingBO = (SettingBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.USER);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

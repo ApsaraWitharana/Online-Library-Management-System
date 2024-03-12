@@ -50,6 +50,14 @@ public class IssueBookDTO {
 
     }
 
+    public IssueBookDTO(String available, String dayCount, LocalDate date, Book book, User user) {
+        this.b_id = b_id;
+        this.u_id = u_id;
+        this.available = available;
+        this.day_count = day_count;
+        this.date = date;
+    }
+
     public IssueBook toEntity() {
 
         IssueBook issueBook = new IssueBook();

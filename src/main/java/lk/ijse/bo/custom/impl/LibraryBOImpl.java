@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import lk.ijse.bo.custom.LibraryBO;
 import lk.ijse.config.SessionFactoryConfig;
+import lk.ijse.dao.DAOFactory;
 import lk.ijse.dao.custom.LibraryDAO;
 import lk.ijse.dao.custom.impl.LibraryDAOImpl;
 import lk.ijse.dto.LibraryDTO;
@@ -19,7 +20,7 @@ public class LibraryBOImpl implements LibraryBO {
 
     private Session session;
 
-    LibraryDAO libraryDAO = new LibraryDAOImpl();
+    LibraryDAO libraryDAO = (LibraryDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.LIBRARY);
 
     @Override
     public List<Library> getLibraryId() {

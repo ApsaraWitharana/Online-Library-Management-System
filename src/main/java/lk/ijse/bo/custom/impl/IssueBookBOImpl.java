@@ -30,7 +30,7 @@ public class IssueBookBOImpl implements IssueBookBO {
         List<IssueBook> issueBooks = issueBookDAO.getAll();
         List<IssueBookDTO> issueBookDTOS = new ArrayList<>();
         for (IssueBook list : issueBooks) {
-             issueBookDTOS.add(new IssueBookDTO());
+             issueBookDTOS.add(new IssueBookDTO(list.getAvailable(),list.getDay_count(),list.getDate(),list.getBook(),list.getUser()));
 
         }
         return issueBookDTOS;
@@ -44,7 +44,8 @@ public class IssueBookBOImpl implements IssueBookBO {
 
     @Override
     public boolean updateIssueBook(IssueBookDTO dto) throws SQLException, ClassNotFoundException {
-        return false;
+        return issueBookDAO.update(new IssueBook(dto.getB_id(),dto.getU_id(),dto.getAvailable(),dto.getDay_count(),dto.getDate()));
+
     }
 
     @Override

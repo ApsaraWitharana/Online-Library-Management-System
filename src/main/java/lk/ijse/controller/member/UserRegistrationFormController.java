@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import lk.ijse.bo.BOFactory;
+import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.bo.custom.UserBO;
 import lk.ijse.bo.custom.impl.UserBOImpl;
 import lk.ijse.controller.member.utile.sateValidation;
@@ -60,7 +62,8 @@ public class UserRegistrationFormController implements Initializable {
     @FXML
     private TextField txtName;
     public ToggleGroup toggleGroup;
-    UserBO userBO = new UserBOImpl();
+    UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.USER);
+
     ObservableList<UserTM> obList = FXCollections.observableArrayList();
     private UserDTO userDTO;
     @Override

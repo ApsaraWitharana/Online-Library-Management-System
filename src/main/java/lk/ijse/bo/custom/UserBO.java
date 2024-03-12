@@ -43,4 +43,7 @@ public interface UserBO extends SuperBO {
 
 
     boolean isCorrect(String text, String text1);
+
+
+
 }

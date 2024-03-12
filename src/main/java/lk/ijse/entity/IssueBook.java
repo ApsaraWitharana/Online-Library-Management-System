@@ -55,4 +55,8 @@ public class IssueBook {
     public IssueBook(String value) {
 
     }
+
+    public IssueBook(String bId, String uId, String available, String dayCount, LocalDate date) {
+
+    }
 }

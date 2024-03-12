@@ -14,7 +14,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.BookBO;
+import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.bo.custom.impl.BookBOImpl;
 import lk.ijse.dto.BookDTO;
 import lk.ijse.dto.tm.BookTM;
@@ -71,7 +73,7 @@ public class BookDetailsFormController implements Initializable {
     private ImageView txtSearch;
 
 
-    BookBO bookBO = new BookBOImpl();
+    BookBO bookBO = (BookBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.BOOK);
     ObservableList<BookTM> obList = FXCollections.observableArrayList();
 
     @Override

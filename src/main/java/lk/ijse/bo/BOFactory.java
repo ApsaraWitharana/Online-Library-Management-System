@@ -7,6 +7,7 @@ import lk.ijse.bo.custom.impl.UserBOImpl;
 
 public class BOFactory {
 
+
     private static BOFactory boFactory;
 
     private BOFactory(){

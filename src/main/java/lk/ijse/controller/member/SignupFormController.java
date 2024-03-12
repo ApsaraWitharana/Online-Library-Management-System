@@ -11,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.bo.BOFactory;
+import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.bo.custom.SignupBO;
 import lk.ijse.bo.custom.impl.SignupBOImpl;
 import lk.ijse.dto.UserDTO;
@@ -37,7 +39,7 @@ public class SignupFormController {
     @FXML
     private AnchorPane signupPane;
 
-    SignupBO signupBO = new SignupBOImpl();
+    SignupBO signupBO = (SignupBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.USER);
     @FXML
     void btnSignupOnAction(ActionEvent event) throws IOException {
 //        Parent anchorPane = FXMLLoader.load(getClass().getResource("/view/loginForm.fxml"));

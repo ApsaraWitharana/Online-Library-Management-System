@@ -11,6 +11,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import lk.ijse.bo.BOFactory;
+import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.bo.custom.LibraryBO;
 import lk.ijse.bo.custom.impl.LibraryBOImpl;
 import lk.ijse.controller.member.utile.sateValidation;
@@ -70,7 +72,7 @@ public class LibraryManageFormController implements Initializable {
     @FXML
     private TextField txtName;
 
-    LibraryBO libraryBO = new LibraryBOImpl();
+    LibraryBO libraryBO = (LibraryBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.LIBRARY);
     ObservableList<LibraryTM> obList = FXCollections.observableArrayList();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -2,11 +2,13 @@ package lk.ijse.dao.custom.impl;
 
 import lk.ijse.config.SessionFactoryConfig;
 import lk.ijse.dao.custom.IssueBookDAO;
+import lk.ijse.dto.IssueBookDTO;
 import lk.ijse.entity.IssueBook;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class IssueBookDAOImpl implements IssueBookDAO {
@@ -36,10 +38,6 @@ public class IssueBookDAOImpl implements IssueBookDAO {
         }
     }
 
-    @Override
-    public boolean update(IssueBook entity) {
-        return false;
-    }
 
     @Override
     public List<IssueBook> getAll() {
@@ -74,6 +72,26 @@ public class IssueBookDAOImpl implements IssueBookDAO {
         Transaction transaction = session.beginTransaction();
         try {
             session.save(issueBook);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            System.out.println(e);
+            System.out.println("IssueBook is not save");
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+
+
+
+    @Override
+    public boolean update(IssueBook issueBook) {
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            session.update(issueBook);
             transaction.commit();
             return true;
         } catch (Exception e) {
