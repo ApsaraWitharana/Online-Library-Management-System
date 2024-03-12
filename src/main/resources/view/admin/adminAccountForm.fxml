@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="479.0" prefWidth="437.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.admin.AdminAccountManage">
+   <children>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#dde5ec" height="373.0" layoutX="63.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" width="311.0" />
+      <Circle fx:id="circle" fill="#d8dee4" layoutX="54.0" layoutY="39.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="101.0" layoutY="31.0" text="Admin Anu" textFill="#faf1f1">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAdminName" layoutX="96.0" layoutY="127.0" onAction="#adminNameOnAction" prefHeight="32.0" prefWidth="242.0" promptText="Enter Name" />
+      <Label layoutX="98.0" layoutY="97.0" text="Edite Name:" textFill="#482424">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <PasswordField layoutX="98.0" layoutY="224.0" prefHeight="32.0" prefWidth="236.0" />
+      <PasswordField layoutX="98.0" layoutY="286.0" prefHeight="32.0" prefWidth="242.0" />
+      <PasswordField layoutX="98.0" layoutY="348.0" prefHeight="32.0" prefWidth="242.0" />
+      <TextField layoutX="95.0" layoutY="224.0" prefHeight="32.0" prefWidth="242.0" promptText="Enter Password" />
+      <TextField layoutX="97.0" layoutY="286.0" prefHeight="32.0" prefWidth="242.0" promptText="Enter New Password" />
+      <TextField layoutX="97.0" layoutY="348.0" prefHeight="32.0" prefWidth="242.0" promptText="Enter Re Enter Password" />
+      <Label layoutX="98.0" layoutY="193.0" text="Edite Password:" textFill="#482424">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
