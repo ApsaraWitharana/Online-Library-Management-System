@@ -2,8 +2,10 @@ package lk.ijse.bo.custom;
 
 import lk.ijse.bo.SuperBO;
 import lk.ijse.dto.UserDTO;
+import lk.ijse.entity.User;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface LoginBO extends SuperBO {
 
@@ -13,4 +15,9 @@ public interface LoginBO extends SuperBO {
 
     boolean isCurrectUser(String user_name, String password) throws SQLException, ClassNotFoundException ;
 
+    List<String> getUserNameList();
+
+    String getPassword(String userName);
+
+    User getUser(String userName);
 }

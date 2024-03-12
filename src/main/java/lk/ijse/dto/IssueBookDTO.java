@@ -1,6 +1,5 @@
 package lk.ijse.dto;
 
-import lk.ijse.embedded.IssueBookPK;
 import lk.ijse.entity.Book;
 import lk.ijse.entity.IssueBook;
 import lk.ijse.entity.User;
@@ -9,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Column;
 import java.time.LocalDate;
 
 @NoArgsConstructor

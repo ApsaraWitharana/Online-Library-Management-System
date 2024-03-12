@@ -4,6 +4,7 @@ import lk.ijse.dao.SuperDAO;
 import lk.ijse.entity.User;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface LoginDAO extends SuperDAO {
 
@@ -16,4 +17,11 @@ public interface LoginDAO extends SuperDAO {
 
 
     boolean isCurrectUser(User user);
+
+    List<String> getUserNameList();
+
+    String getPassword(String user_name);
+
+    User searchh(String txtUserName);
+
 }

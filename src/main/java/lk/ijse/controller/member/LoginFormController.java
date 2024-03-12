@@ -3,8 +3,10 @@ package lk.ijse.controller.member;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -18,9 +20,12 @@ import lk.ijse.bo.custom.impl.LoginBOImpl;
 import lk.ijse.bo.custom.UserBO;
 import lk.ijse.bo.custom.impl.UserBOImpl;
 import lk.ijse.entity.User;
+import org.mindrot.jbcrypt.BCrypt;
+
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class LoginFormController {
 
@@ -47,8 +52,8 @@ public class LoginFormController {
     private PasswordField txtPassword1;
     public static User loginUser;
 
-    public static   String user_name;
-    public static   String password;
+   public static   String user_name;
+   public static   String password;
     UserBO userBO = new UserBOImpl();
     LoginBO loginBO = new LoginBOImpl();
 
@@ -80,6 +85,34 @@ public class LoginFormController {
 //
 //
 //        }
+
+
+//        if (!txtName.getText().isEmpty() && !txtPassword1.getText().isEmpty()){
+//
+//            List<String> userNameLists = loginBO.getUserNameList();
+//
+//            for (String user_name : userNameLists){
+//                if (txtName.getText().equals(user_name)) {
+//                    String password = loginBO.getPassword(user_name);
+//                    if (BCrypt.checkpw(txtPassword1.getText(), password)) {
+//                        user = loginBO.getUser(user_name);
+//
+//                        Stage stage = new Stage();
+//
+//                        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/member/homeForm.fxml"))));
+//                        stage.setTitle("book");
+//                        stage.show();
+//
+//
+//                    } else
+//                        new Alert(Alert.AlertType.ERROR, "Password mismatched").show();
+//
+//                }else
+//                    new Alert(Alert.AlertType.ERROR,"Invalid User Name!").show();
+//            }
+//        }else
+//            new Alert(Alert.AlertType.ERROR,"Please fill up all fields!").show();
+
     }
 
 

@@ -8,6 +8,7 @@ import lk.ijse.dto.UserDTO;
 import lk.ijse.entity.User;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class LoginBOImpl implements LoginBO {
 
@@ -27,5 +28,20 @@ public class LoginBOImpl implements LoginBO {
     @Override
     public boolean isCurrectUser(String user_name, String password) throws SQLException, ClassNotFoundException {
         return loginDAO.isCurrectUser(new User(user_name,password));
+    }
+
+    @Override
+    public List<String> getUserNameList() {
+       return loginDAO.getUserNameList();
+    }
+
+    @Override
+    public String getPassword(String user_name) {
+        return loginDAO.getPassword(user_name);
+    }
+
+    @Override
+    public User getUser(String txtUserName) {
+      return loginDAO.searchh(txtUserName);
     }
 }

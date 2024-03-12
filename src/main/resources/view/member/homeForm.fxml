@@ -122,7 +122,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Text>
-            <Text fill="#e1e1e1" layoutX="93.0" layoutY="121.0" onMouseClicked="#registrationOnAction" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 600; -fx-fill: black; -fx-text-fill: blue; -fx-font-family: 600;" styleClass="text-color" text="Registration">
+            <Text fill="#e1e1e1" layoutX="93.0" layoutY="121.0" onMouseClicked="#registrationOnAction" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: ; -fx-fill: black; -fx-text-fill: blue; -fx-font-family: 600;" styleClass="text-color" text="Registration">
                <font>
                   <Font name="Calibri Bold" size="24.0" />
                </font>

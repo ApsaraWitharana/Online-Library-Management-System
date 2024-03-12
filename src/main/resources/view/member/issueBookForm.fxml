@@ -37,12 +37,12 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnSave" layoutX="130.0" layoutY="557.0" mnemonicParsing="false" onAction="#btnSaveOnAvtion" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Issue" textFill="#280404">
+      <Button fx:id="btnSave" layoutX="130.0" layoutY="557.0" mnemonicParsing="false" onAction="#btnSaveOnAvtion" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="Issue" textFill="#280404">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnCansel" layoutX="315.0" layoutY="557.0" mnemonicParsing="false" onAction="#btnCanselOnAction" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Cansel" textFill="#280404">
+      <Button fx:id="btnCansel" layoutX="315.0" layoutY="557.0" mnemonicParsing="false" onAction="#btnCanselOnAction" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="Cansel" textFill="#280404">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

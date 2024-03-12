@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.sql.SQLException;
+import java.util.List;
 
 
 public class LoginDAOImpl implements LoginDAO {
@@ -91,5 +92,35 @@ public class LoginDAOImpl implements LoginDAO {
         } finally {
             session.close();
         }
+    }
+
+    @Override
+    public List<String> getUserNameList() {
+        session = SessionFactoryConfig.getInstance().getSession();
+        Query query = session.createQuery("SELECT u.name FROM User u");
+        List<String> user_name = query.list();
+        session.close();
+        return user_name;
+    }
+
+    @Override
+    public String getPassword(String user_name) {
+        session = SessionFactoryConfig.getInstance().getSession();
+        Query query = session.createQuery("SELECT u.password FROM User u WHERE u.name = :user_name");
+        query.setParameter("user_name", user_name);
+        String password =  (String) query.uniqueResult();
+        session.close();
+        return password;
+    }
+
+    @Override
+    public User searchh(String txtUser_name) {
+        session = SessionFactoryConfig.getInstance().getSession();
+
+        Query query = session.createQuery("FROM User u WHERE u.name = :user_name");
+        query.setParameter("user_name",txtUser_name);
+        User user = User.class.cast(query.getSingleResult());
+        session.close();
+        return user;
     }
 }
