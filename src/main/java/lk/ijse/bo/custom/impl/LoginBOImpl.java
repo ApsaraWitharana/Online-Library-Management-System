@@ -26,8 +26,8 @@ public class LoginBOImpl implements LoginBO {
     }
 
     @Override
-    public boolean isCurrectUser(String user_name, String password) throws SQLException, ClassNotFoundException {
-        return loginDAO.isCurrectUser(new User(user_name,password));
+    public boolean isCurrectUser(String name, String password) throws SQLException, ClassNotFoundException {
+        return loginDAO.isCurrectUser(new User(name,password));
     }
 
     @Override

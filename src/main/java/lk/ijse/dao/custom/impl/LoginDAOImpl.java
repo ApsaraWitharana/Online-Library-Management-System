@@ -25,7 +25,7 @@ public class LoginDAOImpl implements LoginDAO {
         } catch (Exception e) {
             transaction.rollback();
             System.out.println(e);
-            System.out.println("User is not save");
+            System.out.println("User is not save this");
             return false;
         } finally {
             session.close();
@@ -39,25 +39,30 @@ public class LoginDAOImpl implements LoginDAO {
     }
 
     @Override
-    public boolean isCurrectUser(String user_name, String password) throws SQLException, ClassNotFoundException {
+    public boolean isCurrectUser(String name, String password) throws SQLException, ClassNotFoundException {
         session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        String sql = "SELECT U FROM User AS U WHERE U.password=:pass and U.name=:userName";
+        String sql = "SELECT u.password,u.name FROM User u WHERE u.password=:pass and u.name=:name";
         try {
             Query query = session.createQuery(sql);
             query.setParameter("pass", password);
-            query.setParameter("userName", user_name);
-            User result = (User) query.getSingleResult();
-            if (result != null) {
-                System.out.println(result);
-                System.out.println("Login Success");
-                transaction.commit();
-                return true;
-            }else {
-
-            }
-            transaction.rollback();
-            return false;
+            query.setParameter("name", name);
+           // User result = (User) query.getSingleResult();
+            //User user = (User)(query.getSingleResult());
+            session.isConnected();
+            transaction.commit();
+            return true;
+//            if (result != null) {
+//                System.out.println(result);
+//                System.out.println("Login Success");
+//                transaction.commit();
+//                return true;
+//
+//            }else {
+//
+//            }
+//            transaction.rollback();
+//            return false;
         /*}
         try {
             Query query = session.createQuery("SELECT u FROM User u WHERE u.password=:pass and u.u_name=:userName");
@@ -68,6 +73,7 @@ public class LoginDAOImpl implements LoginDAO {
             return true;*/
         } catch (Exception e) {
 
+            transaction.rollback();
             return false;
         } finally {
             session.close();
@@ -87,7 +93,7 @@ public class LoginDAOImpl implements LoginDAO {
         } catch (Exception e) {
             transaction.rollback();
             System.out.println(e);
-            System.out.println("User is not save");
+            System.out.println("User is not save use");
             return false;
         } finally {
             session.close();

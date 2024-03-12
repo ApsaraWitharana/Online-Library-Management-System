@@ -15,6 +15,8 @@ import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.bo.custom.SignupBO;
 import lk.ijse.bo.custom.impl.SignupBOImpl;
+import lk.ijse.dao.custom.SignupDAO;
+import lk.ijse.dao.custom.impl.SignupDAOImpl;
 import lk.ijse.dto.UserDTO;
 
 import java.io.IOException;
@@ -39,7 +41,8 @@ public class SignupFormController {
     @FXML
     private AnchorPane signupPane;
 
-    SignupBO signupBO = (SignupBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.USER);
+    SignupBO signupBO = new SignupBOImpl();
+    SignupDAO signupDAO = new SignupDAOImpl();
     @FXML
     void btnSignupOnAction(ActionEvent event) throws IOException {
 //        Parent anchorPane = FXMLLoader.load(getClass().getResource("/view/loginForm.fxml"));

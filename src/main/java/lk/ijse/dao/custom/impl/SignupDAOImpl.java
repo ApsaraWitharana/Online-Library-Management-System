@@ -13,15 +13,15 @@ public class SignupDAOImpl implements SignupDAO {
 
 
     @Override
-    public boolean save(String user_name, String password,String email) throws SQLException, ClassNotFoundException {
+    public boolean save(String name, String password,String email) throws SQLException, ClassNotFoundException {
 
         session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
         try {
-            Query query = session.createQuery("SELECT U FROM User AS U WHERE U.password=:pass and U.name=:userName and U.email=:email");
+            Query query = session.createQuery("SELECT u.password,u.name,u.email FROM User u WHERE u.password=:pass and u.name=:name and u.email=:email");
             query.setParameter("pass", password);
-            query.setParameter("userName", user_name);
+            query.setParameter("name", name);
             query.setParameter("email", email);
             query.executeUpdate();
             transaction.commit();
@@ -46,14 +46,14 @@ public class SignupDAOImpl implements SignupDAO {
     }
 
     @Override
-    public boolean isCurrect(String user_name, String password,String email) throws SQLException, ClassNotFoundException {
+    public boolean isCurrect(String name, String password,String email) throws SQLException, ClassNotFoundException {
         session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
         try {
-            Query query = session.createQuery("SELECT U FROM User AS U WHERE U.password=:password and U.name=:userName and U.email=:email");
+            Query query = session.createQuery("SELECT u.password,u.name,u.email FROM User u WHERE u.password=:pass and u.name=:name and u.email=:email");
             query.setParameter("password", password);
-            query.setParameter("userName", user_name);
+            query.setParameter("name", name);
             query.setParameter("email", email);
             query.executeUpdate();
             transaction.commit();

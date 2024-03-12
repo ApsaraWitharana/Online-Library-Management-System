@@ -15,7 +15,7 @@ public interface SignupDAO extends SuperDAO {
     boolean update (User entity) throws SQLException, ClassNotFoundException ;
 
 
-    boolean isCurrect(String user_name, String password,String email) throws SQLException, ClassNotFoundException;
+    boolean isCurrect(String name, String password,String email) throws SQLException, ClassNotFoundException;
 
     boolean isCurrect(User user);
 

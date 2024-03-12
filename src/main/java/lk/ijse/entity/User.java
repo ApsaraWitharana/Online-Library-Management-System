@@ -52,10 +52,7 @@ public class User {
         this.gender = gender;
     }
 
-    public User(String password, String name) {
-        this.password = password;
-        this.name = name;
-    }
+
 
     public User(String id) {
         this.id = id;
@@ -75,6 +72,12 @@ public class User {
         this.name = name;
         this.password = password;
         this.email = email;
+
+    }
+
+    public User(String name,String password){
+        this.name = name;
+        this.password = password;
 
     }
 }

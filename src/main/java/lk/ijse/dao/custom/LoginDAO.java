@@ -12,7 +12,7 @@ public interface LoginDAO extends SuperDAO {
 
     User search(String user_name) throws SQLException, ClassNotFoundException ;
 
-    boolean isCurrectUser(String user_name, String password) throws SQLException, ClassNotFoundException ;
+    boolean isCurrectUser(String name, String password) throws SQLException, ClassNotFoundException ;
 
 
 
@@ -23,5 +23,6 @@ public interface LoginDAO extends SuperDAO {
     String getPassword(String user_name);
 
     User searchh(String txtUserName);
+
 
 }

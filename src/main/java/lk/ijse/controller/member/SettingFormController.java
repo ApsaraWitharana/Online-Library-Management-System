@@ -65,14 +65,17 @@ public class SettingFormController implements Initializable {
     private Label lblUserName;
     public static   String user_name;
 
-    SettingBO settingBO = (SettingBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.USER);
+    SettingBO settingBO = new SettingBOImpl();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-   //   lblName.setText(user.getName());
+//        user_name = txtName.getText();
+    //    lblName.setText(LoginFormController.user.getName());
+
+
+//     lblName.setText(user.getName());
 //        lblUserName.setText(user.getUserName());
 
-//        lblName.setText(LoginFormController.user_name);
 
     }
     @FXML

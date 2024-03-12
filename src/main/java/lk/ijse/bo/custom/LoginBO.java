@@ -13,7 +13,8 @@ public interface LoginBO extends SuperBO {
 
     UserDTO searchUser(String user_name) throws SQLException, ClassNotFoundException ;
 
-    boolean isCurrectUser(String user_name, String password) throws SQLException, ClassNotFoundException ;
+    boolean isCurrectUser(String name, String password) throws SQLException, ClassNotFoundException ;
+
 
     List<String> getUserNameList();
 
