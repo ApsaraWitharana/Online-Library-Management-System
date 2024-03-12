@@ -38,24 +38,24 @@ public class AdminLoginFormController {
 //        stage.setTitle("Admin login dashboard");
 //        stage.show();
 
-//        boolean isCorrectUser = adminDAO.isCurrectUser(txtName.getText(),txtPassword.getText());
-//
-//        System.out.println("admin is  save");
-//
-//        if (isCorrectUser) {
-//            Parent root = FXMLLoader.load(getClass().getResource("/view/admin/dashboardForm.fxml"));
-//            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//            Scene scene = new Scene(root);
-//            stage.setScene(scene);
-//            stage.centerOnScreen();
-//            stage.show();
-//
-//        } else {
-//            //new Alert(Alert.AlertType.WARNING,"Wrong Password").show();
-//            txtPassword.setStyle("-fx-border-color: red;");
-//
-//
-//        }
+        boolean isCorrectUser = adminDAO.isCurrectUser(txtName.getText(),txtPassword.getText());
+
+        System.out.println("admin is  save");
+
+        if (isCorrectUser) {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/admin/dashboardForm.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+
+        } else {
+            //new Alert(Alert.AlertType.WARNING,"Wrong Password").show();
+            txtPassword.setStyle("-fx-border-color: red;");
+
+
+        }
     }
 
 }
