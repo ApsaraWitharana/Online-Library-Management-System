@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -28,14 +29,14 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCurrentP" layoutX="377.0" layoutY="300.0" prefHeight="26.0" prefWidth="214.0" promptText="Current Password:" />
+      <TextField fx:id="txtCurrentPass" layoutX="377.0" layoutY="300.0" prefHeight="26.0" prefWidth="214.0" promptText="Current Password:" />
       <Label layoutX="337.0" layoutY="263.0" text="Edit Password :" textFill="#ece7e7">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtNewP" layoutX="377.0" layoutY="357.0" prefHeight="26.0" prefWidth="214.0" promptText="New Password:" />
-      <TextField fx:id="txtReEnPa" layoutX="377.0" layoutY="412.0" prefHeight="26.0" prefWidth="214.0" promptText="Re Enter Password:" />
+      <TextField fx:id="txtNewPassword" layoutX="377.0" layoutY="357.0" prefHeight="26.0" prefWidth="214.0" promptText="New Password:" />
+      <TextField fx:id="txtconfirmValid" layoutX="377.0" layoutY="412.0" onAction="#passwordOnAction" prefHeight="26.0" prefWidth="214.0" promptText="Re Enter Password:" />
       <ImageView fitHeight="33.0" fitWidth="35.0" layoutX="602.0" layoutY="213.0" onMouseClicked="#UserOnAction">
          <image>
             <Image url="@../../icon/icons8-done-100.png" />
@@ -82,5 +83,8 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <PasswordField fx:id="txtCurrPass" layoutX="379.0" layoutY="300.0" prefHeight="27.0" prefWidth="214.0" />
+      <PasswordField fx:id="txtPass" layoutX="377.0" layoutY="356.0" prefHeight="27.0" prefWidth="214.0" />
+      <PasswordField fx:id="txtReEnter" layoutX="377.0" layoutY="411.0" prefHeight="27.0" prefWidth="214.0" />
    </children>
 </AnchorPane>
