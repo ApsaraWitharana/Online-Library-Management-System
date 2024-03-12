@@ -69,7 +69,7 @@ public class SettingFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-      lblName.setText(user.getName());
+   //   lblName.setText(user.getName());
 //        lblUserName.setText(user.getUserName());
 
 //        lblName.setText(LoginFormController.user_name);
