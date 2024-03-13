@@ -58,7 +58,16 @@ public class Dashboard2FormController implements Initializable {
 
     @FXML
     void btnDashboardOnAction(ActionEvent event) throws IOException {
-        NavigationMember.switchPaging(txtAnchorPane1,"homeAdminForm.fxml","Dashboard");
+
+        Parent anchorPane = FXMLLoader.load(getClass().getResource("/view/admin/adminAccountForm.fxml"));
+        Scene scene = new Scene(anchorPane);
+
+        Stage stage = new Stage();
+        stage.setTitle("Signup Book Manage");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+        //NavigationMember.switchPaging(txtAnchorPane1,"adminAccountForm.fxml","Dashboard");
 
     }
 
