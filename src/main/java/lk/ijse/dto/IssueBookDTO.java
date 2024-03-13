@@ -14,6 +14,7 @@ import java.time.LocalDate;
 @Data
 @ToString
 public class IssueBookDTO {
+    private String id;
     
     private String u_id;
     

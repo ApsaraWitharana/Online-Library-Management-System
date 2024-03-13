@@ -24,9 +24,9 @@
          </font>
       </Label>
       <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c2c4c7" height="572.0" layoutX="67.0" layoutY="74.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" width="465.0" />
-      <ComboBox fx:id="cmbUserId" layoutX="119.0" layoutY="126.0" onAction="#cmbUserIdOnAction" opacity="0.63" prefHeight="32.0" prefWidth="302.0" promptText="User Id" style="-fx-background-color: white;" visibleRowCount="20" />
-      <ComboBox fx:id="cmbBookId" layoutX="119.0" layoutY="203.0" onAction="#cmbBookIdOnAction" opacity="0.63" prefHeight="32.0" prefWidth="302.0" promptText="Book Id:" style="-fx-background-color: white;" visibleRowCount="20" />
-      <DatePicker fx:id="dpDate" layoutX="119.0" layoutY="291.0" prefHeight="32.0" prefWidth="302.0" promptText="Issue Date:" />
+      <ComboBox fx:id="cmbUserId" layoutX="118.0" layoutY="185.0" onAction="#cmbUserIdOnAction" opacity="0.63" prefHeight="32.0" prefWidth="302.0" promptText="User Id" style="-fx-background-color: white;" visibleRowCount="20" />
+      <ComboBox fx:id="cmbBookId" layoutX="118.0" layoutY="265.0" onAction="#cmbBookIdOnAction" opacity="0.63" prefHeight="32.0" prefWidth="302.0" promptText="Book Id:" style="-fx-background-color: white;" visibleRowCount="20" />
+      <DatePicker fx:id="dpDate" layoutX="119.0" layoutY="344.0" prefHeight="32.0" prefWidth="302.0" promptText="Issue Date:" />
       <TextField fx:id="txtDayCount" layoutX="300.0" layoutY="483.0" opacity="0.8" prefHeight="32.0" prefWidth="109.0" promptText="Days:" style="-fx-background-color: white;">
          <font>
             <Font size="14.0" />
@@ -52,10 +52,20 @@
             <Image url="@../../icon/reading-book.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtAvailable" layoutX="119.0" layoutY="383.0" opacity="0.8" prefHeight="32.0" prefWidth="301.0" promptText="Available:" style="-fx-background-color: white;">
+      <TextField fx:id="txtAvailable" layoutX="119.0" layoutY="413.0" opacity="0.8" prefHeight="32.0" prefWidth="301.0" promptText="Available:" style="-fx-background-color: white;">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
+      <Label fx:id="lblIssueId" layoutX="242.0" layoutY="114.0" prefHeight="32.0" prefWidth="178.0" textFill="#e4dfdf">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="102.0" layoutY="114.0" prefHeight="35.0" prefWidth="100.0" text="Issue Id:" textFill="#e4dfdf">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

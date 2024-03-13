@@ -31,7 +31,7 @@ public class IssueBookDAOImpl implements IssueBookDAO {
         } catch (Exception e) {
             transaction.rollback();
             System.out.println(e);
-            System.out.println("Library is not save");
+            System.out.println("Issue book is not save");
             return false;
         } finally {
             session.close();
@@ -84,6 +84,15 @@ public class IssueBookDAOImpl implements IssueBookDAO {
         }
     }
 
+    @Override
+    public String getNextId() {
+        session = SessionFactoryConfig.getInstance().getSession();
+        Query query = session.createQuery("SELECT i.id FROM IssueBook  i ORDER BY i.id DESC");
+        query.setMaxResults(1);
+        String id = (String) query.uniqueResult();
+        session.close();
+        return id;
+    }
 
 
     @Override

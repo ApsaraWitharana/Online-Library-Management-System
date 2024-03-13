@@ -25,6 +25,10 @@ public class IssueBook {
 
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "issue_book_id")
+    private String id;
+
     @Column(name = "available")
         private String available;
 

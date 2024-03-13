@@ -33,4 +33,6 @@ public interface IssueBookBO  extends SuperBO {
     IssueBook getIssueBookAvailabilty(IssueBookDTO issueBookDTO);
 
     boolean saveIssueBook(IssueBookDTO issueBookDTO);
+
+    String getIssueId();
 }

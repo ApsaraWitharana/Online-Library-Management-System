@@ -53,6 +53,10 @@ public class IssueBookFormController implements Initializable {
 
     @FXML
     private TextField txtAvailable;
+
+    @FXML
+    private Label lblIssueId;
+
     IssueBookBO issueBookBO = (IssueBookBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.ISSUE_BOOK);
     UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.USER);
 
@@ -66,6 +70,7 @@ public class IssueBookFormController implements Initializable {
         IssueBookDTO issueBookDTO = new IssueBookDTO();
         issueBookDTO.setDate(dpDate.getValue());
 
+        setIssueId();
         setBookList();
         setUserList();
 
@@ -80,6 +85,21 @@ public class IssueBookFormController implements Initializable {
         assert cmbBookId != null : "fx:id=\"cmbBookId\" was not injected: check your FXML file 'issueBookForm.fxml'.";
 
     }
+
+    private void setIssueId() {
+        String id = String.valueOf(issueBookBO.getIssueId());
+        String numericPart = id.replaceAll("\\D+","");
+
+        if (numericPart.isEmpty())
+            lblIssueId.setText("I001");
+
+        else
+            lblIssueId.setText("I00"+(Integer.parseInt(numericPart)+1));
+
+
+
+    }
+
     @FXML
     void btnCanselOnAction(ActionEvent event) {
 //        IssueBook issueBook = new IssueBook((cmbBookId.getValue()));

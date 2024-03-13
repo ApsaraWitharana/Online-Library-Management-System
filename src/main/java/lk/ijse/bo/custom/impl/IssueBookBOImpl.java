@@ -1,6 +1,7 @@
 package lk.ijse.bo.custom.impl;
 
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.config.SessionFactoryConfig;
 import lk.ijse.dao.custom.BookDAO;
@@ -119,6 +120,11 @@ public class IssueBookBOImpl implements IssueBookBO {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public String getIssueId() {
+        return issueBookDAO.getNextId();
     }
 
 

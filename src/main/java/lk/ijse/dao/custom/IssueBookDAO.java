@@ -23,6 +23,6 @@ public interface IssueBookDAO extends CrudDAO<IssueBook,String> {
     boolean issue(IssueBook issueBook);
 
 
-
+    String getNextId();
 
 }

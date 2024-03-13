@@ -63,7 +63,7 @@ public class Dashboard2FormController implements Initializable {
         Scene scene = new Scene(anchorPane);
 
         Stage stage = new Stage();
-        stage.setTitle("Signup Book Manage");
+        stage.setTitle("Setting book manage");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
@@ -120,7 +120,8 @@ public class Dashboard2FormController implements Initializable {
     }
 
     @FXML
-    void btnReturnOnActino(ActionEvent event) {
+    void btnReturnOnActino(ActionEvent event) throws IOException {
+        NavigationMember.switchPaging(txtAnchorPane1,"returnBookFormm.fxml","Return Manage");
 
     }
 

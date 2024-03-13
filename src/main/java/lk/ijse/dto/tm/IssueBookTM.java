@@ -12,6 +12,9 @@ import java.time.LocalDate;
 @ToString
 @Data
 public class IssueBookTM {
+
+    private String id;
+
     private String u_id;
 
     private String u_name;
