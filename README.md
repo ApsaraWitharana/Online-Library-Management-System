@@ -65,6 +65,9 @@ Features
 
 ![Screenshot 2024-03-11 205221](https://github.com/ApsaraWitharana/Online-Library-Management-System/assets/139870615/3fb25586-0aad-45d7-8fb2-2c3e2ab9d8aa)
 
+* Here you can manage admin details
+
+![Screenshot 2024-03-13 194403](https://github.com/ApsaraWitharana/Online-Library-Management-System/assets/139870615/a6ed5f07-4922-4dfb-8e19-f1266d7d5343)
 
 * ER Diagram To Library Management System
 
