@@ -1,5 +1,6 @@
 package lk.ijse.bo.custom.impl;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import lk.ijse.bo.custom.IssueBookBO;
@@ -9,7 +10,9 @@ import lk.ijse.dao.custom.impl.BookDAOImpl;
 import lk.ijse.dao.custom.IssueBookDAO;
 import lk.ijse.dao.custom.impl.IssueBookDAOImpl;
 import lk.ijse.dto.IssueBookDTO;
+import lk.ijse.dto.UserDTO;
 import lk.ijse.entity.IssueBook;
+import lk.ijse.entity.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -78,7 +81,28 @@ public class IssueBookBOImpl implements IssueBookBO {
 
     @Override
     public ObservableList<IssueBookDTO> getDetailsToTableView() {
-        return null;
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            issueBookDAO.setSession(session);
+            List<IssueBook> booksList = issueBookDAO.getDetailsToTableView();
+            ObservableList<IssueBookDTO> bookObList = FXCollections.observableArrayList();
+
+            for (IssueBook issueBook : booksList) {
+                bookObList.add(
+                        new IssueBookDTO(issueBook.getAvailable(),issueBook.getDay_count(),issueBook.getDate(),issueBook.getId(),issueBook.getUser(),issueBook.getBook()));
+
+            }
+            transaction.commit();
+            session.close();
+            return bookObList;
+        } catch (Exception e) {
+            transaction.rollback();
+            session.close();
+            System.out.println("getDetailsToTableView failed");
+            System.out.println(e);
+            return null;
+        }
     }
 
     @Override

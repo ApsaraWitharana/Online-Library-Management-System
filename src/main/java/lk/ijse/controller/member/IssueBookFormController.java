@@ -102,6 +102,7 @@ public class IssueBookFormController implements Initializable {
 
     @FXML
     void btnCanselOnAction(ActionEvent event) {
+
 //        IssueBook issueBook = new IssueBook((cmbBookId.getValue()));
 //        if (btnCansel.getText().equals("Delete")) {
 //            boolean isDelete = issueBookBO.deleteIssueBook(String.valueOf(issueBook.getBook()));
@@ -115,6 +116,7 @@ public class IssueBookFormController implements Initializable {
 //
 //            }
 //        }
+
 
         boolean noEmptyFields = noEmptyValuesInTextFields();
         IssueBookDTO issueBookDTO = getDetailsInTextFields();
@@ -137,7 +139,9 @@ public class IssueBookFormController implements Initializable {
         }
     }
 
+
     private void clearTxtFields() {
+        lblIssueId.setText("");
         dpDate.setValue(null);
         txtAvailable.setText("");
         txtDayCount.setText("");
@@ -149,6 +153,7 @@ public class IssueBookFormController implements Initializable {
 
     private IssueBookDTO getDetailsInTextFields() {
         IssueBookDTO issueBookDTO = new IssueBookDTO();
+        issueBookDTO.setId(lblIssueId.getId());
         issueBookDTO.setDate(dpDate.getValue());
         issueBookDTO.setAvailable(txtAvailable.getText());
         issueBookDTO.setU_id(cmbUserId.getValue());
@@ -158,12 +163,14 @@ public class IssueBookFormController implements Initializable {
     }
 
     private boolean noEmptyValuesInTextFields() {
+
+        String id = lblIssueId.getId();
         String u_id = cmbUserId.getValue();
         String b_id = cmbBookId.getValue();
         String available = txtAvailable.getText();
         String issue_date = String.valueOf(dpDate.getValue());
         String day_count = txtDayCount.getText();
-        if (!u_id.isEmpty() && b_id.isEmpty() && available !=null && issue_date !=null && day_count !=null){
+        if (!u_id.isEmpty() && b_id.isEmpty() && available !=null && issue_date !=null && day_count !=null && id !=null){
             return true;
         }else {
             return false;
@@ -174,13 +181,27 @@ public class IssueBookFormController implements Initializable {
 
     @FXML
     void btnSaveOnAvtion(ActionEvent event) throws SQLException, ClassNotFoundException {
-//        IssueBookDTO dto = new IssueBookDTO(cmbBookId.getValue(),cmbUserId.getValue(),txtAvailable.getText(),txtDayCount.getText(),dpDate.getValue());
-//
-//        if (btnSave.getText().equals("Save")) {
-//            boolean isSave = issueBookBO.issueIssueBook(dto);
-//            if (isSave) {
+        IssueBookDTO dto = new IssueBookDTO(lblIssueId.getId(),cmbBookId.getValue(),cmbUserId.getValue(),txtAvailable.getText(),txtDayCount.getText(), String.valueOf(dpDate.getValue()));
+
+        if (btnSave.getText().equals("Save")) {
+            boolean isSave = issueBookBO.issueIssueBook(dto);
+            if (isSave) {
+                AlertController.confirmmessage("Process Terminated", "Issue details saving successfully ");
+                System.out.println(dto);
+            } else {
+                AlertController.errormessage("Process Completed", "Issue details saved unsuccessfully\n" +
+                        "Please resubmit the information");
+
+            }
+        }
+
+//        boolean noEmptyFields = noEmptyValuesInTextFields();
+//        if (noEmptyFields) {
+//            IssueBookDTO issueBookDTO = getDetailsInTextFields();
+//            boolean success = issueBookBO.saveIssueBook(issueBookDTO);
+//            if (success) {
 //                AlertController.confirmmessage("Process Terminated", "Issue details saving successfully ");
-//                System.out.println(dto);
+//                clearTxtFields();
 //            } else {
 //                AlertController.errormessage("Process Completed", "Issue details saved unsuccessfully\n" +
 //                        "Please resubmit the information");
@@ -188,19 +209,6 @@ public class IssueBookFormController implements Initializable {
 //            }
 //        }
 
-        boolean noEmptyFields = noEmptyValuesInTextFields();
-        if (noEmptyFields) {
-            IssueBookDTO issueBookDTO = getDetailsInTextFields();
-            boolean success = issueBookBO.saveIssueBook(issueBookDTO);
-            if (success) {
-                AlertController.confirmmessage("Process Terminated", "Issue details saving successfully ");
-                clearTxtFields();
-            } else {
-                AlertController.errormessage("Process Completed", "Issue details saved unsuccessfully\n" +
-                        "Please resubmit the information");
-
-            }
-        }
     }
 
 

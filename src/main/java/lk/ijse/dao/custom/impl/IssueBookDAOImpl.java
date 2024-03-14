@@ -1,9 +1,11 @@
 package lk.ijse.dao.custom.impl;
 
+import javafx.collections.FXCollections;
 import lk.ijse.config.SessionFactoryConfig;
 import lk.ijse.dao.custom.IssueBookDAO;
 import lk.ijse.dto.IssueBookDTO;
 import lk.ijse.entity.IssueBook;
+import lk.ijse.entity.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -141,7 +143,14 @@ public class IssueBookDAOImpl implements IssueBookDAO {
 
     @Override
     public List<IssueBook> getDetailsToTableView() {
-        return null;
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        List<IssueBook> dataList = session.createQuery("FROM IssueBook",IssueBook.class).list();
+        transaction.commit();
+        session.close();
+
+        List<IssueBook> observableList = FXCollections.observableArrayList(dataList);
+        return observableList;
     }
 
     @Override
