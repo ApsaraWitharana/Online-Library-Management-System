@@ -6,9 +6,11 @@ import javafx.scene.control.Alert;
 import lk.ijse.bo.custom.IssueBookBO;
 import lk.ijse.config.SessionFactoryConfig;
 import lk.ijse.dao.custom.BookDAO;
+import lk.ijse.dao.custom.QueryDAO;
 import lk.ijse.dao.custom.impl.BookDAOImpl;
 import lk.ijse.dao.custom.IssueBookDAO;
 import lk.ijse.dao.custom.impl.IssueBookDAOImpl;
+import lk.ijse.dao.custom.impl.QueryDAOImpl;
 import lk.ijse.dto.IssueBookDTO;
 import lk.ijse.dto.UserDTO;
 import lk.ijse.entity.IssueBook;
@@ -24,6 +26,8 @@ public class IssueBookBOImpl implements IssueBookBO {
 
     BookDAO bookDAO = new BookDAOImpl();
     IssueBookDAO issueBookDAO = new IssueBookDAOImpl();
+
+    QueryDAO queryDAO = new QueryDAOImpl();
     @Override
     public List<IssueBook> getIssueBookId() {
         return null;
@@ -31,7 +35,7 @@ public class IssueBookBOImpl implements IssueBookBO {
 
     @Override
     public List<IssueBookDTO> getAllIssueBook() throws SQLException, ClassNotFoundException {
-        List<IssueBook> issueBooks = issueBookDAO.getAll();
+        List<IssueBook> issueBooks = queryDAO.getAll();
         List<IssueBookDTO> issueBookDTOS = new ArrayList<>();
         for (IssueBook list : issueBooks) {
              issueBookDTOS.add(new IssueBookDTO(list.getAvailable(),list.getDay_count(),list.getDate(),list.getBook(),list.getUser()));
