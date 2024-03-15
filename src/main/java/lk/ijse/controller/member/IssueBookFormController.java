@@ -188,6 +188,11 @@ public class IssueBookFormController implements Initializable {
             if (isSave) {
                 AlertController.confirmmessage("Process Terminated", "Issue details saving successfully ");
                 System.out.println(dto);
+
+                lblIssueId.setStyle("-fx-border-color: black");
+                txtAvailable.setStyle("-fx-border-color: black");
+                txtDayCount.setStyle("-fx-border-color: black");
+
             } else {
                 AlertController.errormessage("Process Completed", "Issue details saved unsuccessfully\n" +
                         "Please resubmit the information");
@@ -195,21 +200,9 @@ public class IssueBookFormController implements Initializable {
             }
         }
 
-//        boolean noEmptyFields = noEmptyValuesInTextFields();
-//        if (noEmptyFields) {
-//            IssueBookDTO issueBookDTO = getDetailsInTextFields();
-//            boolean success = issueBookBO.saveIssueBook(issueBookDTO);
-//            if (success) {
-//                AlertController.confirmmessage("Process Terminated", "Issue details saving successfully ");
-//                clearTxtFields();
-//            } else {
-//                AlertController.errormessage("Process Completed", "Issue details saved unsuccessfully\n" +
-//                        "Please resubmit the information");
-//
-//            }
-//        }
+        }
 
-    }
+
 
 
     @FXML
