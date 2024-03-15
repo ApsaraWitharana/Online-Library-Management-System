@@ -11,7 +11,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Data
 @ToString
@@ -47,8 +47,16 @@ public class IssueBook {
     @JoinColumn(name = "book_id",referencedColumnName = "book_id")
     private Book book;
 
+    public IssueBook(String id, String available, LocalDate date, String day_count, User user, Book book) {
+        this.id = id;
+        this.available = available;
+        this.date = date;
+        this.day_count = day_count;
+        this.user = user;
+        this.book = book;
+    }
 
-   public IssueBook(String bId, String bName, String uId, String uName, LocalDate date, String dayCount, String available) {
+    public IssueBook(String bId, String bName, String uId, String uName, String date, String dayCount, String available) {
     }
 
 
@@ -60,7 +68,11 @@ public class IssueBook {
 
     }
 
-    public IssueBook(String bId, String uId, String available, String dayCount, LocalDate date) {
+    public IssueBook(String bId, String uId, String available, String dayCount, String date) {
+
+    }
+
+    public IssueBook(String bId, String uId, LocalDate date, String dayCount, String available, String id) {
 
     }
 }

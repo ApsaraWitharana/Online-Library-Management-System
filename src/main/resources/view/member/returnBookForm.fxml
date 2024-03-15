@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -25,34 +24,24 @@
          </font>
       </Label>
       <ComboBox fx:id="cmbUserId" layoutX="129.0" layoutY="136.0" opacity="0.63" prefHeight="32.0" prefWidth="302.0" promptText="User Id" style="-fx-background-color: white;" visibleRowCount="20" />
-      <TextField fx:id="txtUserName" layoutX="129.0" layoutY="202.0" opacity="0.8" prefHeight="32.0" prefWidth="301.0" promptText="User Name:" style="-fx-background-color: white;">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
-      <ComboBox fx:id="cmbBookId" layoutX="129.0" layoutY="265.0" opacity="0.63" prefHeight="32.0" prefWidth="302.0" promptText="Book Id:" style="-fx-background-color: white;" visibleRowCount="20" />
-      <TextField fx:id="txtBookName" layoutX="130.0" layoutY="327.0" opacity="0.8" prefHeight="32.0" prefWidth="301.0" promptText="Book Name:" style="-fx-background-color: white;">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
-      <DatePicker fx:id="dpDate" layoutX="129.0" layoutY="385.0" prefHeight="32.0" prefWidth="302.0" promptText="Return Date:" />
-      <Label layoutX="130.0" layoutY="460.0" prefHeight="27.0" prefWidth="126.0" text="Issue Date:" textFill="#f2eaea">
+      <ComboBox fx:id="cmbBookId" layoutX="129.0" layoutY="219.0" opacity="0.63" prefHeight="32.0" prefWidth="302.0" promptText="Book Id:" style="-fx-background-color: white;" visibleRowCount="20" />
+      <DatePicker fx:id="dpDate" layoutX="129.0" layoutY="317.0" prefHeight="32.0" prefWidth="302.0" promptText="Return Date:" />
+      <Label layoutX="130.0" layoutY="425.0" prefHeight="27.0" prefWidth="126.0" text="Issue Date:" textFill="#f2eaea">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblDate" layoutX="281.0" layoutY="460.0" prefHeight="27.0" prefWidth="206.0" textFill="#f2eaea">
+      <Label fx:id="lblDate" layoutX="281.0" layoutY="425.0" prefHeight="27.0" prefWidth="206.0" textFill="#f2eaea">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnReturn" layoutX="146.0" layoutY="548.0" mnemonicParsing="false" onAction="#btnReturnOnActiion" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Return" textFill="#280404">
+      <Button fx:id="btnReturn" layoutX="146.0" layoutY="530.0" mnemonicParsing="false" onAction="#btnReturnOnActiion" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Return" textFill="#280404">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnCansel" layoutX="337.0" layoutY="548.0" mnemonicParsing="false" onAction="#btnCanselOnAction" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Cansel" textFill="#280404">
+      <Button fx:id="btnCansel" layoutX="337.0" layoutY="530.0" mnemonicParsing="false" onAction="#btnCanselOnAction" opacity="0.91" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Cansel" textFill="#280404">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

@@ -39,13 +39,13 @@ public class QueryDAOImpl implements QueryDAO {
         Session session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery(" \n" +
-                "FROM  issue_book i \n" +
+                "FROM  IssueBook  i \n" +
                 "JOIN\n" +
-                "user u\n" +
-                "ON i.user_user_id = u.user_id\n" +
+                "User u\n" +
+                "ON u.user_id = i.user_id\n" +
                 "JOIN\n" +
-                "books b\n" +
-                "ON i.book_book_id = b.book_id");
+                "Book b\n" +
+                "ON u.book_id = i.book_id");
 
 
         List<IssueBook> issueBooks = query.list();

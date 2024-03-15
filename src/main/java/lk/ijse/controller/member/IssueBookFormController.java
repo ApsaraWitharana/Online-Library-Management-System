@@ -22,6 +22,7 @@ import lk.ijse.utile.AlertController;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -103,40 +104,40 @@ public class IssueBookFormController implements Initializable {
     @FXML
     void btnCanselOnAction(ActionEvent event) {
 
-//        IssueBook issueBook = new IssueBook((cmbBookId.getValue()));
-//        if (btnCansel.getText().equals("Delete")) {
-//            boolean isDelete = issueBookBO.deleteIssueBook(String.valueOf(issueBook.getBook()));
-//            if (isDelete) {
-//                AlertController.confirmmessage("Process Terminated", "IssueBook details delete successfully "
-//                );
-//                System.out.println(issueBook);
-//            } else {
-//                AlertController.errormessage("Process Completed", "IssueBook details delete unsuccessfully\n" +
-//                        "Please resubmit the information");
-//
-//            }
-//        }
+        IssueBook issueBook = new IssueBook((cmbBookId.getValue()));
+       // if (btnCansel.getText().equals("Delete")) {
+            boolean isDelete = issueBookBO.deleteIssueBook(String.valueOf(issueBook.getBook()));
+            if (isDelete) {
+                AlertController.confirmmessage("Process Terminated", "IssueBook details delete successfully "
+                );
+                System.out.println(issueBook);
+            } else {
+                AlertController.errormessage("Process Completed", "IssueBook details delete unsuccessfully\n" +
+                        "Please resubmit the information");
 
-
-        boolean noEmptyFields = noEmptyValuesInTextFields();
-        IssueBookDTO issueBookDTO = getDetailsInTextFields();
-        if (noEmptyFields) {
-            IssueBook issueBook = issueBookBO.getIssueBookAvailabilty(issueBookDTO);
-            if (issueBook != null) {
-                boolean result = AlertController.okconfirmmessage("Are you sure you want to delete issuebook");
-                if (result) {
-                    boolean success = issueBookBO.deleteIssueBook(String.valueOf(issueBookDTO));
-                    if (success) {
-                        AlertController.confirmmessage("Process Terminated", "Issue details delete successfully ");
-                      clearTxtFields();
-                    } else {
-                        AlertController.errormessage("Process Completed", "Issue details delete unsuccessfully\n" +
-                                "Please resubmit the information");
-
-                    }
-                }
-            }
+          //  }
         }
+
+
+//        boolean noEmptyFields = noEmptyValuesInTextFields();
+//        IssueBookDTO issueBookDTO = getDetailsInTextFields();
+//        if (noEmptyFields) {
+//            IssueBook issueBook = issueBookBO.getIssueBookAvailabilty(issueBookDTO);
+//            if (issueBook != null) {
+//                boolean result = AlertController.okconfirmmessage("Are you sure you want to delete issuebook");
+//                if (result) {
+//                    boolean success = issueBookBO.deleteIssueBook(String.valueOf(issueBookDTO));
+//                    if (success) {
+//                        AlertController.confirmmessage("Process Terminated", "Issue details delete successfully ");
+//                      clearTxtFields();
+//                    } else {
+//                        AlertController.errormessage("Process Completed", "Issue details delete unsuccessfully\n" +
+//                                "Please resubmit the information");
+//
+//                    }
+//                }
+//            }
+       // }
     }
 
 
@@ -181,28 +182,35 @@ public class IssueBookFormController implements Initializable {
 
     @FXML
     void btnSaveOnAvtion(ActionEvent event) throws SQLException, ClassNotFoundException {
-        IssueBookDTO dto = new IssueBookDTO(lblIssueId.getId(),cmbBookId.getValue(),cmbUserId.getValue(),txtAvailable.getText(),txtDayCount.getText(), String.valueOf(dpDate.getValue()));
 
-        if (btnSave.getText().equals("Save")) {
-            boolean isSave = issueBookBO.issueIssueBook(dto);
+        IssueBookDTO dto = new IssueBookDTO(lblIssueId.getId(),cmbBookId.getValue(),cmbUserId.getValue(), txtAvailable.getText(),txtDayCount.getText(), String.valueOf(LocalDate.now()));
+//        if (btnSave.getText().equals("Save")) {
+            boolean isSave = issueBookBO.saveIssueBook(dto);
             if (isSave) {
                 AlertController.confirmmessage("Process Terminated", "Issue details saving successfully ");
                 System.out.println(dto);
-
-                lblIssueId.setStyle("-fx-border-color: black");
-                txtAvailable.setStyle("-fx-border-color: black");
-                txtDayCount.setStyle("-fx-border-color: black");
-
             } else {
                 AlertController.errormessage("Process Completed", "Issue details saved unsuccessfully\n" +
                         "Please resubmit the information");
 
             }
-        }
+       // }
 
-        }
+//        boolean noEmptyFields = noEmptyValuesInTextFields();
+//        if (noEmptyFields) {
+//            IssueBookDTO issueBookDTO = getDetailsInTextFields();
+//            boolean success = issueBookBO.issueIssueBook(issueBookDTO);
+//            if (success) {
+//                AlertController.confirmmessage("Process Terminated", "Issue details saving successfully ");
+//                clearTxtFields();
+//            } else {
+//                AlertController.errormessage("Process Completed", "Issue details saved unsuccessfully\n" +
+//                        "Please resubmit the information");
+//
+//            }
+//        }
 
-
+    }
 
 
     @FXML

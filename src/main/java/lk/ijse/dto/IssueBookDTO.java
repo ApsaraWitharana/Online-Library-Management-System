@@ -10,7 +10,7 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Data
 @ToString
@@ -39,7 +39,7 @@ public class IssueBookDTO {
         this.u_id = u_id;
         this.b_id = b_id;
         this.available = available;
-        this.date = date;
+        this.date= date;
         this.day_count = day_count;
     }
 
@@ -48,7 +48,7 @@ public class IssueBookDTO {
         this.u_id = u_id;
         this.available = available;
         this.day_count = day_count;
-        this.date = date;
+        this.date =date;
 
     }
 
@@ -62,6 +62,13 @@ public class IssueBookDTO {
     }
 
     public IssueBookDTO(String available, String dayCount, LocalDate date, String id, User user, Book book) {
+
+    }
+
+    public IssueBookDTO(String id, String available, String dayCount, LocalDate date, Book book, User user) {
+    }
+
+    public IssueBookDTO(String value, String value1, LocalDate value2, String text3) {
 
     }
 

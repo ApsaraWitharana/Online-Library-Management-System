@@ -17,6 +17,8 @@ import lk.ijse.bo.custom.UserBO;
 import lk.ijse.bo.custom.impl.BookBOImpl;
 import lk.ijse.bo.custom.impl.IssueBookBOImpl;
 import lk.ijse.bo.custom.impl.UserBOImpl;
+import lk.ijse.dto.IssueBookDTO;
+import lk.ijse.utile.AlertController;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -105,6 +107,17 @@ public class ReturnBookFormController implements Initializable {
     @FXML
     void btnReturnOnActiion(ActionEvent event) {
 
+        IssueBookDTO dto = new IssueBookDTO(cmbBookId.getValue(),cmbUserId.getValue(),dpDate.getValue(), String.valueOf(LocalDate.now()));
+//        if (btnSave.getText().equals("Save")) {
+        boolean isSave = issueBookBO.saveIssueBook(dto);
+        if (isSave) {
+            AlertController.confirmmessage("Process Terminated", "Return details saving successfully ");
+            System.out.println(dto);
+        } else {
+            AlertController.errormessage("Process Completed", "Return details saved unsuccessfully\n" +
+                    "Please resubmit the information");
+
+        }
     }
 
 

@@ -19,6 +19,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,10 +36,10 @@ public class IssueBookBOImpl implements IssueBookBO {
 
     @Override
     public List<IssueBookDTO> getAllIssueBook() throws SQLException, ClassNotFoundException {
-        List<IssueBook> issueBooks = queryDAO.getAll();
+        List<IssueBook> issueBooks = issueBookDAO.getAll();
         List<IssueBookDTO> issueBookDTOS = new ArrayList<>();
         for (IssueBook list : issueBooks) {
-             issueBookDTOS.add(new IssueBookDTO(list.getAvailable(),list.getDay_count(),list.getDate(),list.getBook(),list.getUser()));
+             issueBookDTOS.add(new IssueBookDTO(list.getId(),list.getAvailable(),list.getDay_count(), list.getDate(),list.getBook(),list.getUser()));
 
         }
         return issueBookDTOS;
@@ -47,12 +48,12 @@ public class IssueBookBOImpl implements IssueBookBO {
 
     @Override
     public boolean issueIssueBook(IssueBookDTO dto) throws SQLException, ClassNotFoundException {
-        return issueBookDAO.issue(new IssueBook(dto.getB_id(),dto.getU_id(),dto.getDate(),dto.getDay_count(),dto.getAvailable()));
+        return issueBookDAO.issue(new IssueBook(dto.getB_id(),dto.getU_id(), dto.getDate(),dto.getDay_count(),dto.getAvailable(),dto.getId()));
     }
 
     @Override
     public boolean updateIssueBook(IssueBookDTO dto) throws SQLException, ClassNotFoundException {
-        return issueBookDAO.update(new IssueBook(dto.getB_id(),dto.getU_id(),dto.getAvailable(),dto.getDay_count(),dto.getDate()));
+        return issueBookDAO.update(new IssueBook(dto.getB_id(),dto.getU_id(),dto.getAvailable(),dto.getDay_count(), String.valueOf(dto.getDate())));
 
     }
 
@@ -94,7 +95,7 @@ public class IssueBookBOImpl implements IssueBookBO {
 
             for (IssueBook issueBook : booksList) {
                 bookObList.add(
-                        new IssueBookDTO(issueBook.getAvailable(),issueBook.getDay_count(),issueBook.getDate(),issueBook.getId(),issueBook.getUser(),issueBook.getBook()));
+                        new IssueBookDTO(issueBook.getAvailable(),issueBook.getDay_count(), issueBook.getDate(),issueBook.getId(),issueBook.getUser(),issueBook.getBook()));
 
             }
             transaction.commit();
@@ -133,10 +134,11 @@ public class IssueBookBOImpl implements IssueBookBO {
         Session session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
+        IssueBook issueBook = new IssueBook();
         try {
-            issueBookDAO.setSession(session);
-            bookDAO.setSession(session);
-            issueBookDAO.save(issueBookDTO.toEntity());
+//            issueBookDAO.setSession(session);
+//            queryDAO.getAll();
+            issueBookDAO.save(issueBook);
             updateIssueBook(issueBookDTO);
             transaction.commit();
             session.close();
