@@ -157,5 +157,12 @@ public class Dashboard2FormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         timenow(lblDate,lblTime);
+
+        try {
+            NavigationMember.switchPaging(txtAnchorPane1,"userRegistratiionForm.fxml","User Registration");
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
+
     }
 }
