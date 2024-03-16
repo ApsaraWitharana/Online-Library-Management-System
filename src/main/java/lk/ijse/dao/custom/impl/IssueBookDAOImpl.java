@@ -45,18 +45,18 @@ public class IssueBookDAOImpl implements IssueBookDAO {
     public List<IssueBook> getAll() {
         Session session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        Query sql = session.createQuery(" \n" +
-                "SELECT * FROM  issue_book i\n" +
+        Query query = session.createQuery(" \n" +
+                "FROM  IssueBook i \n" +
                 "JOIN\n" +
-                "user u\n" +
+                "User u \n" +
                 "ON i.user_user_id = u.user_id\n" +
                 "JOIN\n" +
-                "books b\n" +
+                "Book b \n" +
                 "ON i.book_book_id = b.book_id");
 
 //        Query query  =   session.createQuery(query);
 //        query.setParameter("user_id",user_user_id);
-        List<IssueBook> issueBooks = sql.list();
+        List<IssueBook> issueBooks = query.list();
         transaction.commit();
         session.close();
         return issueBooks;
@@ -137,12 +137,13 @@ public class IssueBookDAOImpl implements IssueBookDAO {
     }
 
     @Override
-    public IssueBook search(int id) {
+    public IssueBook search(int id){
         return null;
     }
 
     @Override
     public List<IssueBook> getDetailsToTableView() {
+
         Session session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
         List<IssueBook> dataList = session.createQuery("FROM IssueBook",IssueBook.class).list();

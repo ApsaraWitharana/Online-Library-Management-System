@@ -18,6 +18,7 @@ import lk.ijse.dto.tm.IssueBookTM;
 import lk.ijse.entity.IssueBook;
 import lk.ijse.projection.IssueBookProjection;
 import lk.ijse.utile.AlertController;
+import lk.ijse.utile.member.EmailSender;
 
 
 import java.net.URL;
@@ -189,6 +190,10 @@ public class IssueBookFormController implements Initializable {
             if (isSave) {
                 AlertController.confirmmessage("Process Terminated", "Issue details saving successfully ");
                 System.out.println(dto);
+                EmailSender.sendEmail("sachiniapsara703@gmail.com","Issue Book  Alert",dpDate.getValue()+"Today is you issue the book  ,The book should be returned within 7 days");
+//sachiniapsara703@gmail.com
+
+                System.out.println("sorry napura");
             } else {
                 AlertController.errormessage("Process Completed", "Issue details saved unsuccessfully\n" +
                         "Please resubmit the information");

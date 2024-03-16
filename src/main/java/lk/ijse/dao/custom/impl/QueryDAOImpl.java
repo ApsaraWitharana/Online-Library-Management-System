@@ -18,13 +18,13 @@ public class QueryDAOImpl implements QueryDAO {
         Query query = session.createQuery("SELECT i.issue_book_id,\n" +
                 "i.user_id,\n" +
                 "i.book_id , 'Loyalty book'as status\n" +
-                "FROM issue_book i \n" +
+                "FROM IssueBook  i \n" +
                 "WHERE current date <'2023-03-20'\n" +
                 "Union\n" +
                 "SELECT i.issue_book_id,\n" +
                 "i.user_id,\n" +
                 "i.book_id ,'Standard book'as status\n" +
-                "FROM issue_book i \n" +
+                "FROM IssueBook  i \n" +
                 "WHERE current date<'2023-03-30' ");
 
         List<IssueBook> issueBooks = query.list();
