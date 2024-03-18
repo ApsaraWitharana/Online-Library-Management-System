@@ -61,9 +61,6 @@ Features
 
 ![Screenshot 2024-03-11 205143](https://github.com/ApsaraWitharana/Online-Library-Management-System/assets/139870615/e5234946-60cb-41f1-b99c-f47ee016dc23)
 
-* The dashboard will display all needed information in current system database
-
-![Screenshot 2024-03-11 205221](https://github.com/ApsaraWitharana/Online-Library-Management-System/assets/139870615/3fb25586-0aad-45d7-8fb2-2c3e2ab9d8aa)
 
 * Here you can manage admin details
 
